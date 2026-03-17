@@ -64,15 +64,15 @@ Collection of ML learning projects exploring models, datasets, and practical imp
 
 ## 📊 GitHub Stats
 
-![Aanand's GitHub stats](https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME\&show_icons=true\&theme=tokyonight)
+![Aanand's GitHub stats](https://github-readme-stats.vercel.app/api?username=aanandmodi\&show_icons=true\&theme=tokyonight)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME\&layout=compact\&theme=tokyonight)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=aanandmodi\&layout=compact\&theme=tokyonight)
 
 ---
 
 ## 📈 Contribution Graph
 
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME\&theme=tokyo-night)
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=aanandmodi\&theme=tokyo-night)
 
 ---
 
