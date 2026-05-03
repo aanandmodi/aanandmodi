@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Résumés / CVs — do not commit personal documents
+Aanand_Modi_Resume.docx
+*_Resume.docx
