@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hi, I'm Aanand 👋
 
-## Getting Started
+Computer Engineering student focused on **AI/ML, software systems, and building real-world products**.
 
-First, run the development server:
+This repository is my **personal portfolio** — a [Next.js](https://nextjs.org) app (App Router, Tailwind, Framer Motion, Lenis). Run it locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Production build: `npm run build` then `npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Current Focus
 
-## Learn More
+* Machine Learning and AI systems
+* Backend development and scalable APIs
+* Building real-world products through hackathons and projects
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Languages**
 
-## Deploy on Vercel
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Frameworks & Tools**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-0ea5e9?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+
+**Developer Tools**
+
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
+---
+
+## 🧩 Featured Projects
+
+### WheelGo
+
+Smart mobility platform connecting users with nearby wheel vendors.
+
+**Tech:** React Native • Node.js • MongoDB
+
+---
+
+### Ideathon Event Platform
+
+Interactive multi-page event website with animations, countdowns, and dynamic UI.
+
+**Tech:** TypeScript • React • Tailwind CSS
+
+---
+
+### Machine Learning Experiments
+
+Collection of ML learning projects exploring models, datasets, and practical implementations.
+
+**Tech:** Python • NumPy • Scikit-Learn
+
+---
+
+## 📊 GitHub Stats
+
+![Aanand's GitHub stats](https://github-readme-stats.vercel.app/api?username=aanandmodi&show_icons=true&theme=tokyonight)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=aanandmodi&layout=compact&theme=tokyonight)
+
+---
+
+## 📈 Contribution Graph
+
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=aanandmodi&theme=tokyo-night)
+
+---
+
+## 📫 Connect With Me
+
+* LinkedIn: https://linkedin.com/in/aanand-modi-648687353
+* Email: aanandmodi09@gmail.com
+
+---
+
+⚡ *Always building, always learning.*
