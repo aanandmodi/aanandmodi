@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { SectionDoodles } from "./SectionDoodles";
+import { InkHighlight } from "./InkHighlight";
 
 const socialLinks = [
   { label: "GitHub", url: "https://github.com/aanandmodi", emoji: "🐙", color: "#333333" },
@@ -160,6 +162,7 @@ export const ContactFooter = React.memo(function ContactFooter() {
       id="contact" 
       className="relative pt-20 pb-8 scroll-mt-16 overflow-hidden bg-[#F5F0E8]"
     >
+      <SectionDoodles seed={5} tone="warm" density="extreme" />
       {/* Background paper texture */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.4]" style={{
         backgroundImage: `url('/paper-texture.jpg')`,
@@ -208,11 +211,9 @@ export const ContactFooter = React.memo(function ContactFooter() {
             >
               Let&apos;s build<br />
               <span className="relative inline-block mt-2">
-                <span className="relative z-10 italic" style={{ color: "#C4622D" }}>something</span>
-                {/* Hand-drawn highlight */}
-                <svg className="absolute -bottom-2 left-0 w-full h-4 text-[#C4622D] opacity-40 z-0" viewBox="0 0 100 20" preserveAspectRatio="none">
-                  <path d="M0,10 Q50,20 100,5" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
-                </svg>
+                <InkHighlight color="#C4622D">
+                  <span className="italic">something</span>
+                </InkHighlight>
               </span><br/>
               together.
             </h2>
@@ -229,8 +230,10 @@ export const ContactFooter = React.memo(function ContactFooter() {
               {/* Email CTA button */}
               <a
                 href="mailto:aanandmodi09@gmail.com"
-                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#0D0D0D] text-[#F5F0E8] overflow-hidden group/cta transition-transform hover:scale-105 active:scale-95 shadow-[8px_8px_0px_rgba(196,98,45,1)] hover:shadow-[4px_4px_0px_rgba(196,98,45,1)] hover:translate-x-1 hover:translate-y-1"
+                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#0D0D0D] text-[#F5F0E8] overflow-hidden group/cta transition-transform hover:scale-105 active:scale-95 shadow-[8px_8px_0px_rgba(196,98,45,1)] hover:shadow-[4px_4px_0px_rgba(196,98,45,1)] hover:translate-x-1 hover:translate-y-1 magnetic"
                 style={{ fontFamily: "var(--font-mono)" }}
+                data-cursor="link"
+                data-cursor-label="email"
               >
                 <div className="absolute inset-0 bg-[#C4622D] translate-y-[100%] group-hover/cta:translate-y-0 transition-transform duration-300 rounded-xl" />
                 <span className="relative z-10 text-[13px] font-bold tracking-widest uppercase">
@@ -247,7 +250,9 @@ export const ContactFooter = React.memo(function ContactFooter() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-xl border-2 border-stone-800 bg-white shadow-[4px_4px_0px_rgba(13,13,13,1)] flex items-center justify-center text-2xl transition-all duration-300 hover:translate-x-1 hover:translate-y-1 hover:shadow-none hover:bg-stone-100 group/social relative"
+                    className="w-14 h-14 rounded-xl border-2 border-stone-800 bg-white shadow-[4px_4px_0px_rgba(13,13,13,1)] flex items-center justify-center text-2xl transition-all duration-300 hover:translate-x-1 hover:translate-y-1 hover:shadow-none hover:bg-stone-100 group/social relative magnetic"
+                    data-cursor="link"
+                    data-cursor-label={link.label.toLowerCase()}
                   >
                     <span className="group-hover/social:scale-110 group-hover/social:-rotate-12 transition-transform duration-300">
                       {link.emoji}

@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { SectionDoodles } from "./SectionDoodles";
 
 const hackathons = [
   {
@@ -72,38 +73,64 @@ const hackathons = [
 
 const HackathonCard = React.memo(function HackathonCard({ h, index }: { h: typeof hackathons[0]; index: number }) {
   const isEven = index % 2 === 0;
+  const finalTilt = isEven ? -3.4 : 3.4;
 
   return (
-    <div className={`relative flex w-full my-8 lg:my-0 scroll-fade-in ${isEven ? "justify-start" : "justify-end lg:mt-[-80px]"}`}>
+    <div
+      className={`war-card relative flex w-full my-8 lg:my-0 scroll-fade-in ${isEven ? "justify-start" : "justify-end lg:mt-[-80px]"}`}
+      style={{ "--war-accent": h.color, "--war-tilt": `${finalTilt}deg` } as React.CSSProperties}
+    >
       
       {/* Decorative timeline connecting node (visible on desktop) */}
       <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
         <div className="w-4 h-4 rounded-full border-4 border-white shadow-sm" style={{ backgroundColor: h.color }} />
         {/* Connecting dashed line to card */}
-        <svg className="absolute top-1/2 -translate-y-1/2 w-24 h-2" style={{ left: isEven ? 'auto' : '-6rem', right: isEven ? '-6rem' : 'auto' }} viewBox="0 0 100 10" preserveAspectRatio="none">
-          <line x1="0" y1="5" x2="100" y2="5" stroke={h.color} strokeWidth="2" strokeDasharray="4 4" strokeOpacity="0.4" />
+        <svg
+          className="absolute top-1/2 -translate-y-1/2 w-24 h-2"
+          style={{ left: isEven ? "auto" : "-6rem", right: isEven ? "-6rem" : "auto" }}
+          viewBox="0 0 100 10"
+          preserveAspectRatio="none"
+        >
+          <line
+            className="war-thread"
+            x1="0"
+            y1="5"
+            x2="100"
+            y2="5"
+            stroke={h.color}
+            strokeWidth="2"
+            strokeDasharray="4 4"
+            strokeOpacity="0.55"
+          />
         </svg>
       </div>
 
       <div 
-        className="relative w-full lg:w-[45%] group"
+        className="relative w-full lg:w-[45%] group war-slap"
         style={{ 
-          transform: `rotate(${h.rotation}deg)`,
           transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
           willChange: "transform",
         }}
       >
         {/* Tape piece top center */}
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-white/50 backdrop-blur-md z-20 shadow-sm" style={{ 
-          transform: `rotate(${isEven ? -3 : 4}deg)`,
-          clipPath: "polygon(5% 0, 95% 0, 100% 100%, 0 100%)",
-        }} />
+        <div
+          className="war-tape absolute -top-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-white/50 backdrop-blur-md z-20 shadow-sm"
+          style={{
+            transform: `rotate(${isEven ? -3 : 4}deg)`,
+            clipPath: "polygon(5% 0, 95% 0, 100% 100%, 0 100%)",
+          }}
+        />
 
         {/* Index Card Body */}
         <div 
-          className="bg-[#fdfcfb] border border-[#e7e5e4] p-6 lg:p-8 relative z-10 overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 group-hover:-translate-y-1 group-hover:rotate-0"
+          className="war-card-paper bg-[#fdfcfb] border border-[#e7e5e4] p-6 lg:p-8 relative z-10 overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 group-hover:-translate-y-1"
           style={{ borderRadius: "2px 20px 2px 2px", willChange: "transform, box-shadow" }}
         >
+          <div className="war-card-torn-edge war-card-torn-top" />
+          <div className="war-card-torn-edge war-card-torn-right" />
+          <div className="war-card-crease war-card-crease-1" />
+          <div className="war-card-crease war-card-crease-2" />
+
           {/* Subtle grid lines background like a real index card */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.05]" style={{
             backgroundImage: "linear-gradient(transparent 95%, #C4622D 95%)",
@@ -173,8 +200,64 @@ const HackathonCard = React.memo(function HackathonCard({ h, index }: { h: typeo
 });
 
 export const HackathonTimeline = React.memo(function HackathonTimeline() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    // 1) scroll-progress driven "string draw"
+    let raf = 0;
+    const updateProgress = () => {
+      raf = 0;
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight || 1;
+      // progress 0 when top is below viewport, 1 when bottom is above viewport
+      const start = vh * 0.9;
+      const end = vh * 0.15;
+      const t = (start - rect.top) / Math.max(1, rect.height - (start - end));
+      const clamped = Math.max(0, Math.min(1, t));
+      section.style.setProperty("--war-progress", String(clamped));
+    };
+
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(updateProgress);
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    // 2) per-card reveal (tape slap + connector thread)
+    const cards = Array.from(section.querySelectorAll<HTMLElement>(".war-card"));
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          (e.target as HTMLElement).classList.add("war-inview");
+          io.unobserve(e.target);
+        });
+      },
+      { threshold: 0.22, rootMargin: "0px 0px -10% 0px" }
+    );
+    cards.forEach((c) => io.observe(c));
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+      io.disconnect();
+    };
+  }, []);
+
   return (
-    <section id="hackathons" className="relative px-6 lg:px-8 pt-20 lg:pt-32 pb-24 scroll-mt-16 overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="hackathons"
+      className="war-stories relative px-6 lg:px-8 pt-20 lg:pt-32 pb-24 scroll-mt-16 overflow-hidden"
+    >
+      <SectionDoodles seed={4} tone="cool" density="extreme" />
       {/* Background texture - Corkboard / Paper feel */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.3]" style={{
         backgroundImage: `url('/paper-texture.jpg')`,
@@ -199,7 +282,10 @@ export const HackathonTimeline = React.memo(function HackathonTimeline() {
         </div>
 
         {/* The center "string" for desktop (Red string theory) */}
-        <div className="hidden lg:block absolute left-1/2 top-[100px] bottom-10 w-[2px] bg-red-400/50 z-0" style={{ boxShadow: "0 0 5px rgba(248,113,113,0.5)" }} />
+        <div
+          className="war-string hidden lg:block absolute left-1/2 top-[100px] bottom-10 w-[2px] bg-red-400/60 z-0"
+          style={{ boxShadow: "0 0 6px rgba(248,113,113,0.55)" }}
+        />
 
         {/* Hackathon cards timeline */}
         <div className="relative z-10 flex flex-col pt-4">

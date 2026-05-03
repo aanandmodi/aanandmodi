@@ -12,6 +12,9 @@ import { HackathonTimeline } from "@/components/HackathonTimeline";
 import { ContactFooter } from "@/components/ContactFooter";
 import { OpeningAnimation } from "@/components/OpeningAnimation";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { MagneticInteractions } from "@/components/MagneticInteractions";
+import { PaperSeparator } from "@/components/PaperSeparator";
+import { StickerSheet } from "@/components/StickerSheet";
 
 type Burst = { id: number; x: number; y: number };
 
@@ -56,13 +59,19 @@ export default function Home() {
       <SmoothScroll enabled={!loading}>
         <div className={loading ? "h-screen overflow-hidden" : ""}>
           <YellowDotCursor active={!loading} />
+          <MagneticInteractions />
+          <StickerSheet />
           <ClickBurstOverlay />
 
           <NavHeader />
           <HeroSection />
+          <PaperSeparator tone="#C4622D" />
           <AboutSection />
+          <PaperSeparator flip tone="#C4622D" />
           <WorkSection />
+          <PaperSeparator tone="#9680C2" />
           <ResearchSection />
+          <PaperSeparator flip tone="#6A9EC0" />
           <HackathonTimeline />
           <ContactFooter />
         </div>

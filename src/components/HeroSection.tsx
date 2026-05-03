@@ -6,6 +6,9 @@ import { RetroTerminal } from "./RetroTerminal";
 import { NameBadge } from "./NameBadge";
 import { VinylCard } from "./VinylCard";
 import { MacFolder } from "./MacFolder";
+import { TypewriterLines } from "./TypewriterLines";
+import { SectionDoodles } from "./SectionDoodles";
+import { HeroParallax } from "./HeroParallax";
 
 const LocalTime = React.memo(function LocalTime() {
   const [time, setTime] = useState("");
@@ -190,6 +193,8 @@ const CoffeeSteam = React.memo(function CoffeeSteam() {
 export const HeroSection = React.memo(function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-visible">
+      <SectionDoodles seed={0} tone="warm" density="extreme" />
+      <HeroParallax />
       <CozyDust />
       <FloatingCode />
 
@@ -198,7 +203,7 @@ export const HeroSection = React.memo(function HeroSection() {
         <div className="relative w-[1400px] h-[900px] overflow-visible" style={{ maxWidth: "100vw" }}>
 
           {/* ── Name: Left-aligned editorial title ── */}
-          <div className="absolute top-[38%] left-[80px] -translate-y-1/2 z-10">
+          <div className="absolute top-[38%] left-[80px] -translate-y-1/2 z-10" data-parallax="0.6">
             <div className="relative hero-entrance" style={{ "--delay": "0.3s" } as React.CSSProperties}>
               <h1
                 className="text-stone-800"
@@ -234,12 +239,15 @@ export const HeroSection = React.memo(function HeroSection() {
             </div>
 
             {/* Tagline */}
-            <p
+            <TypewriterLines
+              lines={[
+                "I build, then I ship",
+                "AI systems that work in the wild",
+                "From idea to deployed product",
+              ]}
               className="text-stone-400 tracking-[0.25em] uppercase mt-6 hero-entrance"
               style={{ fontFamily: "var(--font-mono)", fontSize: "12px", "--delay": "1.6s" } as React.CSSProperties}
-            >
-              I build, then I ship
-            </p>
+            />
 
             {/* Short bio below name */}
             <p
@@ -264,6 +272,7 @@ export const HeroSection = React.memo(function HeroSection() {
           <div
             className="absolute right-[100px] top-[-70px] z-20"
             style={{ animation: "hero-fade-in 0.7s cubic-bezier(0.4,0,0.2,1) 1.8s both", willChange: "opacity, transform" }}
+            data-parallax="0.9"
           >
             <NameBadge />
           </div>
@@ -272,6 +281,7 @@ export const HeroSection = React.memo(function HeroSection() {
           <div
             className="absolute left-[calc(50%-70px)] top-[clamp(400px,42vw,460px)] z-20"
             style={{ animation: "hero-slide-right 0.7s cubic-bezier(0.4,0,0.2,1) 2.5s both", willChange: "opacity, transform" }}
+            data-parallax="1.15"
           >
             <RetroTerminal />
           </div>
@@ -280,6 +290,7 @@ export const HeroSection = React.memo(function HeroSection() {
           <div
             className="absolute left-[100px] bottom-[40px] z-30 -rotate-[3deg] transition-all duration-300 hover:rotate-[1deg] hover:scale-[1.05] hover:-translate-y-3"
             style={{ animation: "hero-slide-up 0.7s cubic-bezier(0.4,0,0.2,1) 2.8s both", willChange: "opacity, transform" }}
+            data-parallax="0.75"
           >
             <VinylCard />
           </div>
@@ -288,6 +299,7 @@ export const HeroSection = React.memo(function HeroSection() {
           <div
             className="absolute left-[550px] bottom-[50px] z-30 rotate-[4deg]"
             style={{ perspective: "500px", animation: "hero-slide-up 0.7s cubic-bezier(0.4,0,0.2,1) 3.0s both", willChange: "opacity, transform" }}
+            data-parallax="0.95"
           >
             <MacFolder />
           </div>
@@ -296,6 +308,7 @@ export const HeroSection = React.memo(function HeroSection() {
           <div
             className="absolute left-[580px] top-[180px] z-20 rotate-[6deg] scale-[0.6] transition-transform duration-300 ease-out hover:scale-[0.66] hover:rotate-[2deg] group/matrix"
             style={{ animation: "hero-slide-left 0.7s cubic-bezier(0.4,0,0.2,1) 2.6s both", willChange: "opacity, transform" }}
+            data-parallax="1.0"
           >
             <DotMatrixBoard />
           </div>
@@ -304,6 +317,7 @@ export const HeroSection = React.memo(function HeroSection() {
           <div
             className="absolute top-[30px] left-[550px] z-15 rotate-[-4deg] transition-all duration-300 hover:scale-105 hover:rotate-[-1deg] group/paper"
             style={{ animation: "hero-fade-in 0.7s cubic-bezier(0.4,0,0.2,1) 2.4s both", willChange: "opacity, transform" }}
+            data-parallax="1.25"
           >
             <img
               src="/ripped-paper.png"
@@ -315,16 +329,16 @@ export const HeroSection = React.memo(function HeroSection() {
             <div className="absolute top-[48%] left-[55%] -translate-x-1/2 -translate-y-1/2">
               <div className="relative">
                 <CoffeeSteam />
-                <img src="/ice-coffee.png" alt="Ice coffee" className="w-[75px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.15)] hover:coffee-wobble" draggable={false} style={{willChange: "transform"}} />
+              <img src="/ice-coffee.png" alt="Ice coffee" className="w-[75px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.15)] hover:coffee-wobble desk-object" draggable={false} style={{willChange: "transform"}} />
               </div>
             </div>
             {/* Plant */}
             <div className="absolute top-[68%] left-[18%] -translate-x-1/2 -translate-y-1/2">
-              <img src="/plant.png" alt="Plant" className="w-[130px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.12)] scale-[1.4] rotate-[-4deg] plant-hover" draggable={false} style={{willChange: "transform"}} />
+              <img src="/plant.png" alt="Plant" className="w-[130px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.12)] scale-[1.4] rotate-[-4deg] plant-hover desk-object" draggable={false} style={{willChange: "transform"}} />
             </div>
             {/* Apple pencil */}
             <div className="absolute top-1/2 left-[78%] -translate-x-1/2 -translate-y-1/2 group/pencil">
-              <img src="/apple-pencil.png" alt="Pencil" className="w-[60px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.12)] transition-all duration-300 group-hover/pencil:scale-110 group-hover/pencil:-translate-y-2" draggable={false} style={{willChange: "transform"}} />
+              <img src="/apple-pencil.png" alt="Pencil" className="w-[60px] drop-shadow-[0_3px_6px_rgba(0,0,0,0.12)] transition-all duration-300 group-hover/pencil:scale-110 group-hover/pencil:-translate-y-2 desk-object" draggable={false} style={{willChange: "transform"}} />
               <div className="absolute -bottom-[5px] left-[0px] w-[80px] h-[10px] pointer-events-none overflow-hidden">
                 <img src="/hand-drawn-line.svg" alt="" className="w-full h-full object-contain pencil-line" draggable={false} />
               </div>

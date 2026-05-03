@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { SectionDoodles } from "./SectionDoodles";
 
 /* ── Skills as physical sticky notes/Polaroids ── */
 const skillGroups = [
@@ -12,14 +13,20 @@ const skillGroups = [
 ];
 
 /* ── Sticky Note Component ── */
-const SkillStickyNote = React.memo(function SkillStickyNote({ group }: { group: typeof skillGroups[0] }) {
+const SkillStickyNote = React.memo(function SkillStickyNote({
+  group,
+  className = "",
+}: {
+  group: typeof skillGroups[0];
+  className?: string;
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="absolute w-[180px] p-4 shadow-md transition-all duration-300 cursor-pointer z-10"
+      className={`absolute w-[180px] p-4 shadow-md transition-all duration-300 cursor-pointer z-10 ${className}`}
       style={{
         backgroundColor: group.color,
         top: group.top,
@@ -42,8 +49,32 @@ const SkillStickyNote = React.memo(function SkillStickyNote({ group }: { group: 
 });
 
 export const AboutSection = React.memo(function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const root = sectionRef.current;
+    if (!root) return;
+    const targets = Array.from(root.querySelectorAll<HTMLElement>(".builder-reveal"));
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          (entry.target as HTMLElement).classList.add("builder-inview");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.22, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="relative px-6 lg:px-8 py-20 lg:py-32 scroll-mt-16 overflow-hidden">
+    <section ref={sectionRef} id="about" className="relative px-6 lg:px-8 py-20 lg:py-32 scroll-mt-16 overflow-hidden">
+      <SectionDoodles seed={1} tone="accent" density="extreme" />
       {/* Background paper texture */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.4]" style={{
         backgroundImage: `url('/paper-texture.jpg')`,
@@ -67,16 +98,16 @@ export const AboutSection = React.memo(function AboutSection() {
         </div>
 
         {/* Center content - The Diary Entry */}
-        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full max-w-[500px] z-10 scroll-fade-in">
+        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full max-w-[500px] z-10 builder-reveal builder-reveal-center">
           <div className="bg-white/90 backdrop-blur-md p-8 pb-12 rounded-sm shadow-[0_20px_40px_rgba(0,0,0,0.08),_0_1px_3px_rgba(0,0,0,0.05)] border border-stone-100 relative">
             {/* Tape */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-8 bg-white/40 backdrop-blur-sm -rotate-2 border border-white/20 shadow-sm" style={{ clipPath: "polygon(5% 0%, 95% 2%, 100% 100%, 0% 98%)" }} />
             
-            <h2 className="text-stone-800 text-3xl md:text-4xl font-bold mb-6 tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            <h2 className="text-stone-800 text-4xl md:text-5xl font-bold mb-4 tracking-tight" style={{ fontFamily: "var(--font-handwritten)", lineHeight: 1.05 }}>
               Aanand Modi
             </h2>
             
-            <div className="space-y-4 text-stone-600 text-[15px] leading-relaxed" style={{ fontFamily: "var(--font-editorial)" }}>
+            <div className="space-y-4 text-stone-700 text-[30px] leading-[1.35]" style={{ fontFamily: "var(--font-handwritten)" }}>
               <p>
                 I am a Computer Engineering student specializing in AI/ML, but honestly, I&apos;m just addicted to building things that work in the real world.
               </p>
@@ -84,7 +115,7 @@ export const AboutSection = React.memo(function AboutSection() {
                 From autonomous hiring pipelines to multi-agent formatting engines, I don&apos;t just study algorithms—I deploy them under pressure. I thrive in hackathons, tight deadlines, and ambitious ideas.
               </p>
               <div className="pt-4 mt-6 border-t border-stone-200 border-dashed flex justify-between items-center">
-                <span className="text-[11px] uppercase tracking-widest text-stone-400 font-bold" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-[18px] text-stone-500" style={{ fontFamily: "var(--font-handwritten)" }}>
                   Focus: Full Stack AI
                 </span>
                 <img src="/hand-drawn-line.svg" alt="" className="w-16 opacity-50" />
@@ -96,7 +127,7 @@ export const AboutSection = React.memo(function AboutSection() {
         {/* Aesthetic scattered elements */}
         
         {/* Sketch image */}
-        <div className="absolute -left-10 top-[20%] w-[250px] rotate-[-8deg] opacity-90 hidden md:block z-0 shadow-lg hover:rotate-[-2deg] transition-all duration-500 cursor-default" style={{willChange: "transform"}}>
+        <div className="absolute -left-10 top-[20%] w-[250px] rotate-[-8deg] opacity-90 hidden md:block z-0 shadow-lg hover:rotate-[-2deg] transition-all duration-500 cursor-default builder-reveal builder-reveal-left" style={{ willChange: "transform", "--builder-rot": "-8deg" } as React.CSSProperties}>
           <div className="bg-[#f0ece1] p-3 pb-10 border border-stone-200">
             <img src="/sketch.jpg" alt="Sketch" className="w-full h-auto filter grayscale opacity-80 mix-blend-multiply" />
             <p className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[10px] text-stone-500 handwritten-font" style={{ fontFamily: "var(--font-editorial)", fontStyle: "italic" }}>Idea #402</p>
@@ -104,19 +135,23 @@ export const AboutSection = React.memo(function AboutSection() {
         </div>
 
         {/* Coffee cup stain/image */}
-        <div className="absolute right-[10%] top-[5%] w-[180px] rotate-[15deg] opacity-80 hidden lg:block z-0 pointer-events-none">
+        <div className="absolute right-[10%] top-[5%] w-[180px] rotate-[15deg] opacity-80 hidden lg:block z-0 pointer-events-none builder-reveal builder-reveal-right" style={{ "--builder-rot": "15deg" } as React.CSSProperties}>
           <img src="/coffee.png" alt="Coffee" className="w-full h-auto drop-shadow-xl" />
         </div>
 
         {/* Apple Pencil */}
-        <div className="absolute left-[30%] bottom-0 w-[300px] rotate-[45deg] opacity-90 hidden md:block z-20 pointer-events-none drop-shadow-2xl">
+        <div className="absolute left-[30%] bottom-0 w-[300px] rotate-[45deg] opacity-90 hidden md:block z-20 pointer-events-none drop-shadow-2xl builder-reveal builder-reveal-up" style={{ "--builder-rot": "45deg" } as React.CSSProperties}>
           <img src="/apple-pencil.png" alt="Pencil" className="w-full h-auto" />
         </div>
 
         {/* Sticky Notes for Skills */}
         <div className="hidden lg:block">
           {skillGroups.map((group) => (
-            <SkillStickyNote key={group.label} group={group} />
+            <SkillStickyNote
+              key={group.label}
+              group={group}
+              className="builder-reveal builder-reveal-up"
+            />
           ))}
         </div>
 
@@ -125,7 +160,7 @@ export const AboutSection = React.memo(function AboutSection() {
           {skillGroups.map((group) => (
             <div
               key={group.label}
-              className="p-4 shadow-sm relative"
+              className="p-4 shadow-sm relative builder-reveal builder-reveal-up"
               style={{ backgroundColor: group.color, borderBottomRightRadius: "15px 5px" }}
             >
               <h4 className="text-[10px] font-bold text-stone-800 mb-1 uppercase tracking-wider" style={{ fontFamily: "var(--font-mono)" }}>

@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useRef, useCallback } from "react";
+import { SectionDoodles } from "./SectionDoodles";
+import { InkHighlight } from "./InkHighlight";
 
 const papers = [
   {
@@ -224,6 +226,7 @@ const ResearchCard = React.memo(function ResearchCard({ paper }: { paper: typeof
 export const ResearchSection = React.memo(function ResearchSection() {
   return (
     <section id="research" className="relative px-6 lg:px-8 pt-20 lg:pt-32 pb-16 scroll-mt-16 overflow-hidden">
+      <SectionDoodles seed={3} tone="cool" density="extreme" />
       {/* Paper texture background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.3]" style={{
         backgroundImage: `url('/paper-texture.jpg')`,
@@ -266,13 +269,12 @@ export const ResearchSection = React.memo(function ResearchSection() {
               letterSpacing: "-0.02em",
             }}
           >
-            Turning <span style={{ color: "#9680C2", fontStyle: "italic" }}>hypothesis</span> into peer-reviewed reality.
+            Turning{" "}
+            <InkHighlight color="#9680C2">
+              <span style={{ fontStyle: "italic" }}>hypothesis</span>
+            </InkHighlight>{" "}
+            into peer-reviewed reality.
           </h2>
-          
-          {/* Hand-drawn curly underline */}
-          <svg className="absolute -bottom-4 left-0 w-[120px] h-[20px] text-[#9680C2] opacity-60 z-0" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-          </svg>
         </div>
 
         {papers.map((paper, i) => (

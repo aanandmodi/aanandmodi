@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useSyncExternalStore } from "react";
+import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 const MOBILE_MQ = "(max-width: 1023px)";
 
@@ -20,9 +20,9 @@ function getMobileServerSnapshot() {
 
 export function YellowDotCursor({ active }: { active: boolean }) {
   const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLSpanElement>(null);
   const mouse = useRef({ x: -100, y: -100 });
-  const pos = useRef({ x: -100, y: -100 });
+  const [cursorLabel, setCursorLabel] = useState("");
   const isMobile = useSyncExternalStore(subscribeMobile, getMobileSnapshot, getMobileServerSnapshot);
 
   useEffect(() => {
@@ -34,17 +34,14 @@ export function YellowDotCursor({ active }: { active: boolean }) {
     window.addEventListener("mousemove", onMove, { passive: true });
 
     let raf = 0;
-    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
     function tick() {
-      pos.current.x = lerp(pos.current.x, mouse.current.x, 0.18);
-      pos.current.y = lerp(pos.current.y, mouse.current.y, 0.18);
       const dot = dotRef.current;
-      const ring = ringRef.current;
+      const label = labelRef.current;
       if (dot) {
-        dot.style.transform = `translate3d(${mouse.current.x - 5}px, ${mouse.current.y - 5}px, 0)`;
+        dot.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`;
       }
-      if (ring) {
-        ring.style.transform = `translate3d(${pos.current.x - 20}px, ${pos.current.y - 20}px, 0)`;
+      if (label) {
+        label.style.transform = `translate3d(${mouse.current.x + 12}px, ${mouse.current.y - 18}px, 0)`;
       }
       raf = requestAnimationFrame(tick);
     }
@@ -56,27 +53,65 @@ export function YellowDotCursor({ active }: { active: boolean }) {
     };
   }, [active, isMobile]);
 
+  useEffect(() => {
+    if (isMobile || !active) return;
+
+    const handlePointerOver = (e: PointerEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const interactive = target.closest<HTMLElement>("[data-cursor], a, button");
+      if (!interactive) {
+        setCursorLabel("");
+        return;
+      }
+
+      const label = interactive.dataset.cursorLabel;
+      setCursorLabel(label ?? "");
+    };
+
+    const handlePointerLeaveWindow = () => {
+      setCursorLabel("");
+    };
+
+    window.addEventListener("pointerover", handlePointerOver);
+    window.addEventListener("pointerleave", handlePointerLeaveWindow);
+
+    return () => {
+      window.removeEventListener("pointerover", handlePointerOver);
+      window.removeEventListener("pointerleave", handlePointerLeaveWindow);
+    };
+  }, [active, isMobile]);
+
   if (isMobile || !active) return null;
 
   return (
     <>
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 z-[10000] pointer-events-none mix-blend-difference"
-        style={{ width: 10, height: 10, borderRadius: "50%", backgroundColor: "#FBBF24", willChange: "transform" }}
-      />
-      <div
-        ref={ringRef}
-        className="fixed top-0 left-0 z-[9999] pointer-events-none"
+        className="fixed top-0 left-0 z-[10000] pointer-events-none"
         style={{
-          width: 40,
-          height: 40,
+          width: 12,
+          height: 12,
           borderRadius: "50%",
-          border: "1.5px solid rgba(251,191,36,0.35)",
+          backgroundColor: "var(--color-ink)",
+          boxShadow: "0 0 0 1px rgba(245,240,232,0.5)",
           willChange: "transform",
-          transition: "width 0.3s, height 0.3s",
         }}
       />
+      <span
+        ref={labelRef}
+        className="fixed top-0 left-0 z-[10001] pointer-events-none uppercase tracking-[0.2em]"
+        style={{
+          fontFamily: "var(--font-mono)",
+          fontSize: "9px",
+          color: "rgba(28,25,23,0.9)",
+          opacity: cursorLabel ? 1 : 0,
+          transition: "opacity 0.2s ease",
+          willChange: "transform, opacity",
+        }}
+      >
+        {cursorLabel}
+      </span>
     </>
   );
 }

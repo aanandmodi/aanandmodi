@@ -17,7 +17,9 @@ export const NavHeader = React.memo(function NavHeader() {
         <Link
           href="/"
           style={{ fontFamily: "var(--font-display)" }}
-          className="text-[14px] font-medium text-stone-700 hover:text-stone-900 transition-colors tracking-wide"
+          className="text-[14px] font-medium text-stone-700 hover:text-stone-900 transition-colors tracking-wide magnetic"
+          data-cursor="link"
+          data-cursor-label="home"
         >
           Aanand Modi
         </Link>
@@ -27,7 +29,9 @@ export const NavHeader = React.memo(function NavHeader() {
               key={link.href}
               href={link.href}
               style={{ fontFamily: "var(--font-body)" }}
-              className="text-[12px] text-stone-500 hover:text-stone-800 transition-colors tracking-wide"
+              className="text-[12px] text-stone-500 hover:text-stone-800 transition-colors tracking-wide magnetic"
+              data-cursor="link"
+              data-cursor-label={link.label.toLowerCase()}
             >
               {link.label}
             </a>
