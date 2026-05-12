@@ -26,7 +26,7 @@ Computer Engineering student specializing in **AI/ML**, with hands-on experience
 
 ## Education
 
-**B.E. in Artificial Intelligence & Machine Learning** — Silver Oak College of Engineering and Technology, Ahmedabad, Gujarat (2023 – present).
+**B.Tech CE in Artificial Intelligence & Machine Learning** — Silver Oak College of Engineering and Technology, Ahmedabad, Gujarat (2024 – present).
 
 ---
 
