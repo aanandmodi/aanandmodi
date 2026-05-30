@@ -84,10 +84,12 @@ mindmap
 
 ### 🛠️ Languages & Tools
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,html,css,js,nodejs,python,fastapi&perline=10" />
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,html,css,js,nodejs,python,fastapi&perline=10" /><br>
   <img src="https://skillicons.dev/icons?i=firebase,docker,aws,gcp,git,github,vscode,figma,flutter,dart&perline=10" />
-</p>
+  <br><br>
+  <img src="https://media.giphy.com/media/3obRyHK0wGEQs/giphy.gif" width="130" alt="Coding Cat" style="border-radius: 8px; border: 1px solid #7A11FF30;" />
+</div>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
@@ -144,11 +146,22 @@ mindmap
 
 ### 🏆 Hackathon Podiums & War Stories
 
-- 🥉 **CodeVersity National Hackathon 2025 (IIT Gandhinagar)** — _2nd Runner-Up_ with **HireMinds AI**
-- 🥉 **GDG Autonomous Hackathon 2026 (Google Developer Groups)** — _2nd Runner-Up_ with **StartupOps**
-- 🏁 **HACKaMINeD 2026 (Nirma University)** — Competed with **Magnetic Manuscript** among 1250+ hackers
-- 🎯 **Avishkar 2.0 (Silver Oak University)** — Featured showcase project with **Food Insight Scanner**
-- ⚡ **Smart India Hackathon 2025 (SIH)** — College Top Qualifier representing Silver Oak University
+<table>
+  <tr>
+    <td width="70%" valign="top">
+      <ul>
+        <li>🥉 <strong>CodeVersity National Hackathon 2025 (IIT Gandhinagar)</strong> — <i>2nd Runner-Up</i> with <strong>HireMinds AI</strong></li>
+        <li>🥉 <strong>GDG Autonomous Hackathon 2026 (Google Developer Groups)</strong> — <i>2nd Runner-Up</i> with <strong>StartupOps</strong></li>
+        <li>🏁 <strong>HACKaMINeD 2026 (Nirma University)</strong> — Competed with <strong>Magnetic Manuscript</strong> among 1250+ hackers</li>
+        <li>🎯 <strong>Avishkar 2.0 (Silver Oak University)</strong> — Featured showcase project with <strong>Food Insight Scanner</strong></li>
+        <li>⚡ <strong>Smart India Hackathon 2025 (SIH)</strong> — College Top Qualifier representing Silver Oak University</li>
+      </ul>
+    </td>
+    <td width="30%" align="center" valign="middle">
+      <img src="https://media.giphy.com/media/l0HlRnAWXxn0MhHKg/giphy.gif" width="100%" style="border-radius: 8px; border: 1px solid #00F5FF30;" alt="Retro Console" />
+    </td>
+  </tr>
+</table>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
@@ -156,15 +169,24 @@ mindmap
 
 ### 🔬 Scientific Publications
 
-<blockquote>
-  📄 <strong>"Navigating the Nutritional Maze: A Case for the Food Insight Scanner for Personalized Health"</strong><br>
-  <i>Published in the International Journal of Research and Innovation in Social Science (IJRISS)</i><br>
-  <strong>Authors:</strong> Aanand Modi, Abhishek Agarwal | <strong>Advisor:</strong> Asst. Prof. K. Ramya<br>
-  <strong>Date:</strong> February 2026 | <strong>ISSN:</strong> 2454-6186<br>
-  🔗 <a href="https://doi.org/10.47772/IJRISS.2026.10190029" target="_blank">Read Paper via DOI Link</a>
-  <br><br>
-  <i>"Proposed a personalized OCR mobile translation system to analyze complex nutritional labels, helping address India's food labeling crisis affecting 212 million diabetics. Accepted for publication in 7 days."</i>
-</blockquote>
+<table>
+  <tr>
+    <td width="70%" valign="top">
+      <blockquote>
+        📄 <strong>"Navigating the Nutritional Maze: A Case for the Food Insight Scanner for Personalized Health"</strong><br>
+        <i>Published in the International Journal of Research and Innovation in Social Science (IJRISS)</i><br>
+        <strong>Authors:</strong> Aanand Modi, Abhishek Agarwal | <strong>Advisor:</strong> Asst. Prof. K. Ramya<br>
+        <strong>Date:</strong> February 2026 | <strong>ISSN:</strong> 2454-6186<br>
+        🔗 <a href="https://doi.org/10.47772/IJRISS.2026.10190029" target="_blank">Read Paper via DOI Link</a>
+        <br><br>
+        <i>"Proposed a personalized OCR mobile translation system to analyze complex nutritional labels, helping address India's food labeling crisis affecting 212 million diabetics. Accepted for publication in 7 days."</i>
+      </blockquote>
+    </td>
+    <td width="30%" align="center" valign="middle">
+      <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="100%" style="border-radius: 8px; border: 1px solid #FE026C30;" alt="Lofi Study Girl" />
+    </td>
+  </tr>
+</table>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
@@ -174,15 +196,24 @@ mindmap
 
 <table>
   <tr>
-    <td width="50%">💻 <strong>OS</strong>: Windows 11 Home</td>
-    <td width="50%">🐚 <strong>Shell</strong>: PowerShell & Git Bash</td>
-  </tr>
-  <tr>
-    <td>🛠️ <strong>IDE</strong>: VS Code & Cursor</td>
-    <td>🎨 <strong>Theme</strong>: Tokyo Night / Synthwave '84</td>
-  </tr>
-  <tr>
-    <td colspan="2">⌨️ <strong>Hardware</strong>: Mechanical Keyboard with Cream Yellow switches</td>
+    <td width="65%" valign="top">
+      <table width="100%">
+        <tr>
+          <td width="50%">💻 <strong>OS</strong>: Windows 11 Home</td>
+          <td width="50%">🐚 <strong>Shell</strong>: PowerShell & Git Bash</td>
+        </tr>
+        <tr>
+          <td>🛠️ <strong>IDE</strong>: VS Code & Cursor</td>
+          <td>🎨 <strong>Theme</strong>: Tokyo Night / Synthwave '84</td>
+        </tr>
+        <tr>
+          <td colspan="2">⌨️ <strong>Hardware</strong>: Mechanical Keyboard with Cream Yellow switches</td>
+        </tr>
+      </table>
+    </td>
+    <td width="35%" align="center" valign="middle">
+      <img src="https://media.giphy.com/media/jTzY1B7K1iS040aWc0/giphy.gif" width="100%" style="border-radius: 8px; border: 1px solid #00FF8730;" alt="Cassette Player" />
+    </td>
   </tr>
 </table>
 
