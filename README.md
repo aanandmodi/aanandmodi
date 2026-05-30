@@ -1,10 +1,6 @@
 <!-- ✨ Super Aesthetic Lofi & Pixel Art README ✨ -->
 <div align="center">
 
-<img src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" width="100%" alt="Aesthetic Lofi Header">
-
-<br><br>
-
 <h1>Hi there! I'm Aanand Modi ✦</h1>
 
 <a href="https://git.io/typing-svg">
@@ -42,7 +38,7 @@
 
 <table>
   <tr>
-    <td width="60%">
+    <td width="55%">
       I am a passionate <strong>Full Stack Developer</strong> and <strong>AI Enthusiast</strong> who loves blending design with technology to build intuitive, engaging, and powerful applications.<br><br>
       🔭 <strong>Currently working on:</strong> AI-driven applications like <i>HireMinds AI</i> and autonomous agent networks.<br>
       🌱 <strong>Currently learning:</strong> Advanced LangGraph, Next.js 14, and Scalable Cloud Infrastructure.<br>
@@ -54,8 +50,8 @@
         <i>"Any sufficiently advanced technology is indistinguishable from magic." - Arthur C. Clarke</i>
       </blockquote>
     </td>
-    <td width="40%" align="center">
-      <img src="https://user-images.githubusercontent.com/74038190/216122069-42b4742a-4375-4fc1-a9f4-18c72834b6e5.gif" width="100%" style="border-radius: 10px;" alt="Lofi Room">
+    <td width="45%" align="center">
+      <img src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif" width="100%" style="border-radius: 10px;" alt="Aesthetic Lofi Header">
     </td>
   </tr>
 </table>
@@ -115,27 +111,15 @@ mindmap
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 </div>
 
-### 🏆 GitHub Trophies
-
-<div align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=aanandmodi&theme=tokyonight&column=7&margin-w=12&margin-h=12" alt="Trophies" />
-  </a>
-</div>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-</div>
-
 ### 📊 Deep Analytics & Stats
 
 <table>
   <tr>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats-ten-gilt.vercel.app/api?username=aanandmodi&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&ring_color=9680C2" alt="Aanand's GitHub Stats" />
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=aanandmodi&theme=tokyonight" alt="Aanand's Profile Summary" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats-ten-gilt.vercel.app/api/top-langs/?username=aanandmodi&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Aanand's Top Languages" />
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aanandmodi&theme=tokyonight" alt="Aanand's Top Languages" />
     </td>
   </tr>
 </table>
@@ -147,9 +131,9 @@ mindmap
 ### 🐍 Contribution Grid Snake
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="./assets/github-contribution-grid-snake-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aanandmodi/aanandmodi/main/assets/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aanandmodi/aanandmodi/main/assets/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/aanandmodi/aanandmodi/main/assets/github-contribution-grid-snake-dark.svg" width="100%">
   </picture>
 </div>
 
