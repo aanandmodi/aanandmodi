@@ -118,7 +118,9 @@ mindmap
 ### 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=aanandmodi&theme=tokyonight&margin-w=15&margin-h=15&no-frame=true&no-bg=true" alt="Trophies" />
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=aanandmodi&theme=tokyonight&column=7&margin-w=12&margin-h=12" alt="Trophies" />
+  </a>
 </div>
 
 <div align="center">
@@ -130,10 +132,10 @@ mindmap
 <table>
   <tr>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=aanandmodi&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&ring_color=9680C2" alt="Aanand's GitHub Stats" />
+      <img src="https://github-readme-stats-ten-gilt.vercel.app/api?username=aanandmodi&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&ring_color=9680C2" alt="Aanand's GitHub Stats" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aanandmodi&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Aanand's Top Languages" />
+      <img src="https://github-readme-stats-ten-gilt.vercel.app/api/top-langs/?username=aanandmodi&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Aanand's Top Languages" />
     </td>
   </tr>
 </table>
@@ -145,9 +147,9 @@ mindmap
 ### 🐍 Contribution Grid Snake
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aanandmodi/aanandmodi/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aanandmodi/aanandmodi/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/aanandmodi/aanandmodi/output/github-contribution-grid-snake.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="./assets/github-contribution-grid-snake-dark.svg" width="100%">
   </picture>
 </div>
 
