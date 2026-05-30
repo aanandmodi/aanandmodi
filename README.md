@@ -11,15 +11,19 @@
 
 <br><br>
 
+<!-- 🤝 Animated Top Social Links -->
 <p align="center">
-  <a href="mailto:aanandmodi09@gmail.com">
-    <img src="https://img.shields.io/badge/Email-aanandmodi09%40gmail.com-FE026C?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="mailto:aanandmodi09@gmail.com" target="_blank">
+    <img src="./assets/socials/item_8.gif" width="44" alt="Gmail" style="margin: 0 8px;" />
   </a>
-  <a href="https://linkedin.com/in/aanand-modi-648687353">
-    <img src="https://img.shields.io/badge/LinkedIn-Aanand_Modi-00F5FF?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn" />
+  <a href="https://linkedin.com/in/aanand-modi-648687353" target="_blank">
+    <img src="./assets/socials/item_0.gif" width="44" alt="LinkedIn" style="margin: 0 8px;" />
   </a>
-  <a href="https://aanandmodi.com">
-    <img src="https://img.shields.io/badge/Portfolio-aanandmodi.com-7A11FF?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  <a href="https://twitter.com/aanandmodi" target="_blank">
+    <img src="./assets/socials/item_6.gif" width="44" alt="Twitter" style="margin: 0 8px;" />
+  </a>
+  <a href="https://aanandmodi.com" target="_blank">
+    <img src="./assets/socials/item_7.gif" width="44" alt="Portfolio" style="margin: 0 8px;" />
   </a>
 </p>
 
@@ -84,11 +88,31 @@ mindmap
 
 ### 🛠️ Languages & Tools
 
+<!-- ⚡ Animated Moving Logos -->
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,html,css,js,nodejs,python,fastapi&perline=10" /><br>
-  <img src="https://skillicons.dev/icons?i=firebase,docker,aws,gcp,git,github,vscode,figma,flutter,dart&perline=10" />
+  <img src="./assets/logos/item_0.gif" width="55" alt="Tech Logo 0" style="margin: 4px;" />
+  <img src="./assets/logos/item_1.gif" width="55" alt="Tech Logo 1" style="margin: 4px;" />
+  <img src="./assets/logos/item_2.gif" width="55" alt="Tech Logo 2" style="margin: 4px;" />
+  <img src="./assets/logos/item_3.gif" width="55" alt="Tech Logo 3" style="margin: 4px;" />
+  <img src="./assets/logos/item_4.gif" width="55" alt="Tech Logo 4" style="margin: 4px;" />
+  <img src="./assets/logos/item_5.gif" width="55" alt="Tech Logo 5" style="margin: 4px;" />
+  <img src="./assets/logos/item_6.gif" width="55" alt="Tech Logo 6" style="margin: 4px;" />
+  <img src="./assets/logos/item_7.gif" width="55" alt="Tech Logo 7" style="margin: 4px;" /><br>
+  <img src="./assets/logos/item_8.gif" width="55" alt="Tech Logo 8" style="margin: 4px;" />
+  <img src="./assets/logos/item_9.gif" width="55" alt="Tech Logo 9" style="margin: 4px;" />
+  <img src="./assets/logos/item_10.gif" width="55" alt="Tech Logo 10" style="margin: 4px;" />
+  <img src="./assets/logos/item_11.gif" width="55" alt="Tech Logo 11" style="margin: 4px;" />
+  <img src="./assets/logos/item_12.gif" width="55" alt="Tech Logo 12" style="margin: 4px;" />
+  <img src="./assets/logos/item_13.gif" width="55" alt="Tech Logo 13" style="margin: 4px;" />
+  <img src="./assets/logos/item_14.gif" width="55" alt="Tech Logo 14" style="margin: 4px;" />
+  <img src="./assets/logos/item_15.gif" width="55" alt="Tech Logo 15" style="margin: 4px;" /><br>
+  <img src="./assets/logos/item_16.gif" width="55" alt="Tech Logo 16" style="margin: 4px;" />
+  <img src="./assets/logos/item_17.gif" width="55" alt="Tech Logo 17" style="margin: 4px;" />
+  <img src="./assets/logos/item_18.gif" width="55" alt="Tech Logo 18" style="margin: 4px;" />
+  <img src="./assets/logos/item_19.gif" width="55" alt="Tech Logo 19" style="margin: 4px;" />
+  <img src="./assets/logos/item_20.gif" width="55" alt="Tech Logo 20" style="margin: 4px;" />
   <br><br>
-  <img src="https://media.giphy.com/media/3obRyHK0wGEQs/giphy.gif" width="130" alt="Coding Cat" style="border-radius: 8px; border: 1px solid #7A11FF30;" />
+  <img src="./assets/coding-cat.gif" width="130" alt="Coding Cat" style="border-radius: 8px; border: 1px solid #7A11FF30;" />
 </div>
 
 <div align="center">
@@ -158,7 +182,7 @@ mindmap
       </ul>
     </td>
     <td width="30%" align="center" valign="middle">
-      <img src="https://media.giphy.com/media/l0HlRnAWXxn0MhHKg/giphy.gif" width="100%" style="border-radius: 8px; border: 1px solid #00F5FF30;" alt="Retro Console" />
+      <img src="./assets/retro-console.gif" width="100%" style="border-radius: 8px; border: 1px solid #00F5FF30;" alt="Retro Console" />
     </td>
   </tr>
 </table>
@@ -183,7 +207,7 @@ mindmap
       </blockquote>
     </td>
     <td width="30%" align="center" valign="middle">
-      <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="100%" style="border-radius: 8px; border: 1px solid #FE026C30;" alt="Lofi Study Girl" />
+      <img src="./assets/lofi-study.gif" width="100%" style="border-radius: 8px; border: 1px solid #FE026C30;" alt="Lofi Study Girl" />
     </td>
   </tr>
 </table>
@@ -212,7 +236,7 @@ mindmap
       </table>
     </td>
     <td width="35%" align="center" valign="middle">
-      <img src="https://media.giphy.com/media/jTzY1B7K1iS040aWc0/giphy.gif" width="100%" style="border-radius: 8px; border: 1px solid #00FF8730;" alt="Cassette Player" />
+      <img src="./assets/cassette-deck.gif" width="100%" style="border-radius: 8px; border: 1px solid #00FF8730;" alt="Cassette Player" />
     </td>
   </tr>
 </table>
@@ -238,6 +262,56 @@ mindmap
     </td>
   </tr>
 </table>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
+
+### 🤝 Connect With Me
+
+<div align="center">
+  <p>Here is the full gallery of animated socials. Tap any icon to reach me!</p>
+  
+  <a href="https://linkedin.com/in/aanand-modi-648687353" target="_blank">
+    <img src="./assets/socials/item_0.gif" width="48" alt="LinkedIn" style="margin: 4px;" />
+  </a>
+  <a href="https://instagram.com/aanandmodi" target="_blank">
+    <img src="./assets/socials/item_1.gif" width="48" alt="Instagram" style="margin: 4px;" />
+  </a>
+  <a href="#" target="_blank">
+    <img src="./assets/socials/item_2.gif" width="48" alt="Facebook" style="margin: 4px;" />
+  </a>
+  <a href="#" target="_blank">
+    <img src="./assets/socials/item_3.gif" width="48" alt="YouTube" style="margin: 4px;" />
+  </a>
+  <a href="#" target="_blank">
+    <img src="./assets/socials/item_4.gif" width="48" alt="Discord" style="margin: 4px;" />
+  </a>
+  <a href="#" target="_blank">
+    <img src="./assets/socials/item_5.gif" width="48" alt="Pinterest" style="margin: 4px;" />
+  </a>
+  <a href="https://twitter.com/aanandmodi" target="_blank">
+    <img src="./assets/socials/item_6.gif" width="48" alt="Twitter" style="margin: 4px;" />
+  </a>
+  <a href="https://aanandmodi.com" target="_blank">
+    <img src="./assets/socials/item_7.gif" width="48" alt="Portfolio" style="margin: 4px;" />
+  </a>
+  <a href="mailto:aanandmodi09@gmail.com" target="_blank">
+    <img src="./assets/socials/item_8.gif" width="48" alt="Gmail" style="margin: 4px;" />
+  </a>
+  <a href="#" target="_blank">
+    <img src="./assets/socials/item_9.gif" width="48" alt="Snapchat" style="margin: 4px;" />
+  </a>
+  <a href="#" target="_blank">
+    <img src="./assets/socials/item_10.gif" width="48" alt="TikTok" style="margin: 4px;" />
+  </a>
+  <a href="#" target="_blank">
+    <img src="./assets/socials/item_11.gif" width="48" alt="WhatsApp" style="margin: 4px;" />
+  </a>
+  <a href="https://github.com/aanandmodi" target="_blank">
+    <img src="./assets/socials/item_12.gif" width="48" alt="GitHub" style="margin: 4px;" />
+  </a>
+</div>
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
