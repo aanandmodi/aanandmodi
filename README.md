@@ -1,13 +1,9 @@
 <!-- ✨ Super Aesthetic Lofi & Pixel Art README ✨ -->
 <div align="center">
 
-<h1>Hi there! I'm Aanand Modi ✦</h1>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=9680C2,5A9E82,C4622D&height=250&section=header&text=Aanand%20Modi&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20AI%20%26%20Agentic%20Systems%20Enthusiast&descAlignY=55&descSize=20" width="100%" alt="Header" />
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=24&pause=1000&color=9680C2&center=true&vCenter=true&width=550&lines=Full+Stack+Developer;AI+%26+Agentic+Systems+Enthusiast;Crafting+Aesthetic+Interfaces;Building+the+future+with+AI..." alt="Typing SVG" />
-</a>
-
-<br><br>
+<br>
 
 <a href="https://github.com/aanandmodi">
   <img src="https://komarev.com/ghpvc/?username=aanandmodi&label=Profile%20Views&color=9680C2&style=flat-square" alt="Profile Views" />
@@ -63,7 +59,7 @@
 ### 🧠 Developer Mindmap
 
 ```mermaid
-%%{init: {'theme':'base', 'themeVariables': { 'primaryColor': '#9680C2', 'edgeLabelBackground':'#1a1b26', 'tertiaryColor': '#5A9E82', 'primaryBorderColor': '#1a1b26', 'fontFamily': 'Fira Code'}}}%%
+%%{init: {'theme':'dark', 'themeVariables': { 'primaryColor': '#9680C2', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#5A9E82', 'lineColor': '#ffffff', 'tertiaryColor': '#1a1b26'}}}%%
 mindmap
   root((Aanand Modi))
     Frontend
@@ -119,7 +115,7 @@ mindmap
       <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=aanandmodi&theme=tokyonight" alt="Aanand's Profile Summary" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aanandmodi&theme=tokyonight" alt="Aanand's Top Languages" />
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aanandmodi&theme=radical" alt="Aanand's Top Languages" />
     </td>
   </tr>
 </table>
@@ -138,13 +134,5 @@ mindmap
 </div>
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-  
-  <br><br>
-  
-  <img src="https://user-images.githubusercontent.com/74038190/212284157-b08006e8-a89e-4a6c-ab09-91500f40fdf9.gif" width="300" alt="Pixel Computer">
-  
-  <p><i>Building the web, one line of code at a time.<br>Thanks for dropping by! 🎧☕</i></p>
-  
-  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100" alt="Pixel Cat">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=9680C2,5A9E82,C4622D&height=150&section=footer" width="100%" alt="Footer" />
 </div>
