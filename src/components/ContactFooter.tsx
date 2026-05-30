@@ -35,9 +35,9 @@ const StatusLabel = React.memo(function StatusLabel() {
   return (
     <div className="absolute top-10 right-10 lg:right-32 rotate-12 z-20 group cursor-default">
       {/* Tape piece */}
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 bg-white/40 backdrop-blur-sm -rotate-6 z-10 shadow-sm" style={{ clipPath: "polygon(5% 0, 95% 0, 100% 100%, 0 100%)" }} />
-      <div className="bg-[#FEFBED] px-4 py-3 shadow-md border border-[#F0EAC1] transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3 rounded-sm" style={{ willChange: "transform" }}>
-        <span className="text-[12px] text-stone-600 italic font-medium whitespace-nowrap" style={{ fontFamily: "var(--font-editorial)" }}>
+      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 bg-white/40 dark:bg-stone-800/40 backdrop-blur-sm -rotate-6 z-10 shadow-sm" style={{ clipPath: "polygon(5% 0, 95% 0, 100% 100%, 0 100%)" }} />
+      <div className="bg-[#FEFBED] dark:bg-stone-900 px-4 py-3 shadow-md border border-[#F0EAC1] dark:border-stone-800 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3 rounded-sm" style={{ willChange: "transform" }}>
+        <span className="text-[12px] text-stone-600 dark:text-stone-300 italic font-medium whitespace-nowrap" style={{ fontFamily: "var(--font-editorial)" }}>
           &ldquo;{brainrotQuotes[quoteIndex]}&rdquo;
         </span>
       </div>
@@ -48,18 +48,18 @@ const StatusLabel = React.memo(function StatusLabel() {
 /* ── Marquee Line ── */
 const Marquee = React.memo(function Marquee() {
   return (
-    <div className="w-full overflow-hidden bg-[#0D0D0D] py-3 my-16 border-y-2 border-[#C4622D] relative z-20 transform -rotate-2 scale-105 shadow-xl">
+    <div className="w-full overflow-hidden bg-[#0D0D0D] py-3 my-16 border-y-2 border-[#C4622D] dark:border-[#5A9E82] relative z-20 transform -rotate-2 scale-105 shadow-xl">
       <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite]">
         {[...Array(6)].map((_, i) => (
           <div key={i} className="flex items-center mx-4">
             <span className="text-[#F5F0E8] text-[12px] uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
               OPEN FOR WORK
             </span>
-            <span className="mx-4 text-[#C4622D] text-[14px]">✦</span>
+            <span className="mx-4 text-[#C4622D] dark:text-[#5A9E82] text-[14px]">✦</span>
             <span className="text-[#F5F0E8] text-[12px] uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
               LET&apos;S SHIP IT
             </span>
-            <span className="mx-4 text-[#C4622D] text-[14px]">✦</span>
+            <span className="mx-4 text-[#C4622D] dark:text-[#5A9E82] text-[14px]">✦</span>
           </div>
         ))}
       </div>
@@ -160,18 +160,18 @@ export const ContactFooter = React.memo(function ContactFooter() {
   return (
     <section 
       id="contact" 
-      className="relative pt-20 pb-8 scroll-mt-16 overflow-hidden bg-[#F5F0E8]"
+      className="relative pt-20 pb-8 scroll-mt-16 overflow-hidden bg-[#F5F0E8] dark:bg-stone-950"
     >
       <SectionDoodles seed={5} tone="warm" density="extreme" />
       {/* Background paper texture */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.4]" style={{
+      <div className="absolute inset-0 pointer-events-none opacity-[0.4] dark:opacity-[0.12] dark:mix-blend-screen" style={{
         backgroundImage: `url('/paper-texture.jpg')`,
         backgroundSize: "cover",
         mixBlendMode: "multiply",
       }} />
 
       {/* Grid lines to make it look like a planning board */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.05] z-0" style={{
+      <div className="absolute inset-0 pointer-events-none opacity-[0.05] dark:opacity-[0.02] z-0" style={{
         backgroundImage: `linear-gradient(transparent 95%, #C4622D 100%), linear-gradient(90deg, transparent 95%, #C4622D 100%)`,
         backgroundSize: "40px 40px",
       }} />
@@ -184,23 +184,23 @@ export const ContactFooter = React.memo(function ContactFooter() {
         <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
           {/* Section label */}
           <div className="flex items-center gap-4 mb-8 scroll-fade-in">
-            <span className="text-[11px] tracking-[0.3em] uppercase text-stone-500 font-bold" style={{ fontFamily: "var(--font-mono)" }}>
+            <span className="text-[11px] tracking-[0.3em] uppercase text-stone-500 dark:text-stone-400 font-bold" style={{ fontFamily: "var(--font-mono)" }}>
               05 — Contact
             </span>
-            <div className="flex-1 h-[2px] bg-stone-300" />
+            <div className="flex-1 h-[2px] bg-stone-300 dark:bg-stone-800" />
           </div>
 
           {/* Big Editorial CTA */}
           <div className="scroll-fade-in text-center lg:text-left mt-20 mb-12 relative">
             
             {/* Hand-drawn arrow pointing to button */}
-            <svg className="hidden lg:block absolute -top-8 left-[60%] w-24 h-24 text-[#C4622D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ transform: "rotate(15deg)" }}>
+            <svg className="hidden lg:block absolute -top-8 left-[60%] w-24 h-24 text-[#C4622D] dark:text-[#5A9E82]" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ transform: "rotate(15deg)" }}>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
               <path d="M19 12 Q 15 2, 5 5" strokeWidth="2" fill="none" />
             </svg>
 
             <h2
-              className="text-stone-900 mb-6 drop-shadow-sm"
+              className="text-stone-900 dark:text-stone-100 mb-6 drop-shadow-sm"
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(3.5rem, 8vw, 6.5rem)",
@@ -211,7 +211,7 @@ export const ContactFooter = React.memo(function ContactFooter() {
             >
               Let&apos;s build<br />
               <span className="relative inline-block mt-2">
-                <InkHighlight color="#C4622D">
+                <InkHighlight color="var(--color-accent)">
                   <span className="italic">something</span>
                 </InkHighlight>
               </span><br/>
@@ -219,23 +219,23 @@ export const ContactFooter = React.memo(function ContactFooter() {
             </h2>
             
             <div className="inline-block relative">
-               <p className="text-stone-600 text-[16px] max-w-[420px] mx-auto lg:mx-0 mb-10 leading-relaxed bg-[#FEFBED] p-4 border border-[#F0EAC1] shadow-sm -rotate-1 relative z-10" style={{ fontFamily: "var(--font-editorial)" }}>
+               <p className="text-stone-600 dark:text-stone-350 text-[16px] max-w-[420px] mx-auto lg:mx-0 mb-10 leading-relaxed bg-[#FEFBED] dark:bg-stone-900 p-4 border border-[#F0EAC1] dark:border-stone-800 shadow-sm -rotate-1 relative z-10" style={{ fontFamily: "var(--font-editorial)" }}>
                  Whether you need a 3AM hackathon partner, a deep-tech solution, or just want to talk about AI, let&apos;s connect. No cap.
                </p>
                {/* Tape */}
-               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/60 backdrop-blur-sm rotate-3 z-20" style={{ clipPath: "polygon(0 0, 100% 10%, 95% 100%, 5% 90%)" }} />
+               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/60 dark:bg-stone-800/60 backdrop-blur-sm rotate-3 z-20" style={{ clipPath: "polygon(0 0, 100% 10%, 95% 100%, 5% 90%)" }} />
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start mt-6">
               {/* Email CTA button */}
               <a
                 href="mailto:aanandmodi09@gmail.com"
-                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#0D0D0D] text-[#F5F0E8] overflow-hidden group/cta transition-transform hover:scale-105 active:scale-95 shadow-[8px_8px_0px_rgba(196,98,45,1)] hover:shadow-[4px_4px_0px_rgba(196,98,45,1)] hover:translate-x-1 hover:translate-y-1 magnetic"
+                className="relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#0D0D0D] text-[#F5F0E8] overflow-hidden group/cta transition-transform hover:scale-105 active:scale-95 shadow-[8px_8px_0px_var(--color-accent)] hover:shadow-[4px_4px_0px_var(--color-accent)] hover:translate-x-1 hover:translate-y-1 magnetic"
                 style={{ fontFamily: "var(--font-mono)" }}
                 data-cursor="link"
                 data-cursor-label="email"
               >
-                <div className="absolute inset-0 bg-[#C4622D] translate-y-[100%] group-hover/cta:translate-y-0 transition-transform duration-300 rounded-xl" />
+                <div className="absolute inset-0 bg-[#C4622D] dark:bg-[#5A9E82] translate-y-[100%] group-hover/cta:translate-y-0 transition-transform duration-300 rounded-xl" />
                 <span className="relative z-10 text-[13px] font-bold tracking-widest uppercase">
                   Say Hello
                 </span>
@@ -250,7 +250,7 @@ export const ContactFooter = React.memo(function ContactFooter() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-xl border-2 border-stone-800 bg-white shadow-[4px_4px_0px_rgba(13,13,13,1)] flex items-center justify-center text-2xl transition-all duration-300 hover:translate-x-1 hover:translate-y-1 hover:shadow-none hover:bg-stone-100 group/social relative magnetic"
+                    className="w-14 h-14 rounded-xl border-2 border-stone-800 dark:border-stone-700 bg-white dark:bg-stone-900 shadow-[4px_4px_0px_rgba(13,13,13,1)] dark:shadow-[4px_4px_0px_var(--color-accent)] flex items-center justify-center text-2xl transition-all duration-300 hover:translate-x-1 hover:translate-y-1 hover:shadow-none hover:bg-stone-100 dark:hover:bg-stone-800 group/social relative magnetic"
                     data-cursor="link"
                     data-cursor-label={link.label.toLowerCase()}
                   >
@@ -274,25 +274,25 @@ export const ContactFooter = React.memo(function ContactFooter() {
 
         <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
           {/* Footer bottom */}
-          <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t-2 border-stone-200 border-dashed">
+          <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t-2 border-stone-200 dark:border-stone-800 border-dashed">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-stone-200 border-2 border-stone-400 flex items-center justify-center text-[12px] font-bold text-stone-600 shadow-inner" style={{ fontFamily: "var(--font-display)" }}>
+              <div className="w-10 h-10 rounded-full bg-stone-200 dark:bg-stone-800 border-2 border-stone-400 dark:border-stone-700 flex items-center justify-center text-[12px] font-bold text-stone-600 dark:text-stone-300 shadow-inner" style={{ fontFamily: "var(--font-display)" }}>
                 AM
               </div>
               <div className="flex flex-col">
-                <span className="text-[11px] text-stone-500 uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-[11px] text-stone-500 dark:text-stone-400 uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
                   Aanand Modi © {new Date().getFullYear()}
                 </span>
-                <span className="text-[9px] text-stone-400 uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-[9px] text-stone-400 dark:text-stone-500 uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
                   All rights reserved.
                 </span>
               </div>
             </div>
             
             {/* Receipt style sign-off */}
-            <div className="bg-white px-5 py-3 border-2 border-stone-200 shadow-[2px_2px_0px_rgba(0,0,0,0.1)] -rotate-2 hover:rotate-0 transition-transform">
-              <span className="text-[11px] text-stone-500 flex items-center gap-2 uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
-                Built in Ahmedabad <span className="inline-block animate-bounce text-[#C4622D] text-lg">♥</span>
+            <div className="bg-white dark:bg-stone-900 px-5 py-3 border-2 border-stone-200 dark:border-stone-800 shadow-[2px_2px_0px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_0px_rgba(255,255,255,0.05)] -rotate-2 hover:rotate-0 transition-transform">
+              <span className="text-[11px] text-stone-500 dark:text-stone-400 flex items-center gap-2 uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
+                Built in Ahmedabad <span className="inline-block animate-bounce text-[#C4622D] dark:text-[#5A9E82] text-lg">♥</span>
               </span>
             </div>
           </div>

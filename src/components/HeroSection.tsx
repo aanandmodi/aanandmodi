@@ -9,6 +9,8 @@ import { MacFolder } from "./MacFolder";
 import { TypewriterLines } from "./TypewriterLines";
 import { SectionDoodles } from "./SectionDoodles";
 import { HeroParallax } from "./HeroParallax";
+import { CassettePlayer } from "./CassettePlayer";
+
 
 const LocalTime = React.memo(function LocalTime() {
   const [time, setTime] = useState("");
@@ -206,7 +208,7 @@ export const HeroSection = React.memo(function HeroSection() {
           <div className="absolute top-[38%] left-[80px] -translate-y-1/2 z-10" data-parallax="0.6">
             <div className="relative hero-entrance" style={{ "--delay": "0.3s" } as React.CSSProperties}>
               <h1
-                className="text-stone-800"
+                className="text-stone-900 dark:text-stone-100"
                 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: "7rem",
@@ -218,7 +220,7 @@ export const HeroSection = React.memo(function HeroSection() {
                 Aanand
               </h1>
               <h1
-                className="text-stone-800"
+                className="text-stone-900 dark:text-stone-100"
                 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: "7rem",
@@ -228,7 +230,7 @@ export const HeroSection = React.memo(function HeroSection() {
                   fontStyle: "italic",
                 }}
               >
-                Modi<span className="text-[#C4622D]">.</span>
+                Modi<span className="text-[#C4622D] dark:text-[#5A9E82]">.</span>
               </h1>
               {/* Glare sweep */}
               <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ animation: "hero-glare 1.2s ease-in-out 5s both" }}>
@@ -245,13 +247,13 @@ export const HeroSection = React.memo(function HeroSection() {
                 "AI systems that work in the wild",
                 "From idea to deployed product",
               ]}
-              className="text-stone-400 tracking-[0.25em] uppercase mt-6 hero-entrance"
+              className="text-stone-600 dark:text-stone-400 tracking-[0.25em] uppercase mt-6 hero-entrance"
               style={{ fontFamily: "var(--font-mono)", fontSize: "12px", "--delay": "1.6s" } as React.CSSProperties}
             />
 
             {/* Short bio below name */}
             <p
-              className="text-stone-500 mt-4 max-w-[380px] leading-relaxed hero-entrance"
+              className="text-stone-700 dark:text-stone-300 mt-4 max-w-[380px] leading-relaxed hero-entrance"
               style={{ fontFamily: "var(--font-body)", fontSize: "14px", "--delay": "2.0s" } as React.CSSProperties}
             >
               AI/ML engineer & full-stack builder from Ahmedabad.
@@ -262,7 +264,7 @@ export const HeroSection = React.memo(function HeroSection() {
             {/* Status indicator */}
             <div className="flex items-center gap-2 mt-5 hero-entrance" style={{ "--delay": "2.3s" } as React.CSSProperties}>
               <div className="w-[6px] h-[6px] rounded-full bg-emerald-500 animate-pulse" style={{willChange: "opacity"}} />
-              <span className="text-[10px] text-stone-400 tracking-wider uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+              <span className="text-[10px] text-stone-600 dark:text-stone-400 tracking-wider uppercase" style={{ fontFamily: "var(--font-mono)" }}>
                 Open to opportunities
               </span>
             </div>
@@ -303,6 +305,16 @@ export const HeroSection = React.memo(function HeroSection() {
           >
             <MacFolder />
           </div>
+
+          {/* ── Cassette Player: Bottom center-right ── */}
+          <div
+            className="absolute left-[820px] bottom-[30px] z-30 rotate-[-3deg]"
+            style={{ animation: "hero-slide-up 0.7s cubic-bezier(0.4,0,0.2,1) 3.1s both", willChange: "opacity, transform" }}
+            data-parallax="0.85"
+          >
+            <CassettePlayer />
+          </div>
+
 
           {/* ── Dot matrix: Right of name ── */}
           <div
@@ -393,18 +405,18 @@ export const HeroSection = React.memo(function HeroSection() {
           />
           <img
             src="/star.svg" alt=""
-            className="absolute right-[450px] bottom-[100px] w-[22px] opacity-20 pointer-events-none"
+            className="absolute right-[450px] bottom-[100px] w-[22px] opacity-20 dark:opacity-40 dark:invert pointer-events-none"
             style={{ animation: "code-float 6s ease-in-out infinite", willChange: "transform" }}
             draggable={false}
           />
           <img
             src="/messy.svg" alt=""
-            className="absolute right-[200px] top-[700px] w-[100px] opacity-[0.06] pointer-events-none rotate-12"
+            className="absolute right-[200px] top-[700px] w-[100px] opacity-[0.06] dark:opacity-[0.12] dark:invert pointer-events-none rotate-12"
             draggable={false}
           />
           <img
             src="/pixel-flower.svg" alt=""
-            className="absolute left-[340px] top-[200px] w-[35px] opacity-[0.08] pointer-events-none rotate-[-15deg]"
+            className="absolute left-[340px] top-[200px] w-[35px] opacity-[0.08] dark:opacity-[0.15] dark:invert pointer-events-none rotate-[-15deg]"
             style={{ animation: "code-float 8s ease-in-out 1s infinite", willChange: "transform" }}
             draggable={false}
           />
@@ -412,7 +424,7 @@ export const HeroSection = React.memo(function HeroSection() {
           {/* ── Highlights / underline SVG ── */}
           <img
             src="/highlights.svg" alt=""
-            className="absolute left-[85px] top-[calc(38%+85px)] w-[320px] opacity-[0.15] pointer-events-none"
+            className="absolute left-[85px] top-[calc(38%+85px)] w-[320px] opacity-[0.15] dark:opacity-[0.25] dark:invert pointer-events-none"
             style={{ animation: "hero-fade-in 0.8s cubic-bezier(0.4,0,0.2,1) 1.2s both", willChange: "opacity, transform" }}
             draggable={false}
           />
@@ -432,14 +444,14 @@ export const HeroSection = React.memo(function HeroSection() {
       {/* ══════ MOBILE: Stacked layout ══════ */}
       <div className="lg:hidden px-6 pt-20 pb-12">
         <div className="flex items-center justify-between mb-8">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 dark:text-stone-400 font-bold" style={{ fontFamily: "var(--font-mono)" }}>
             Portfolio / 2026
           </span>
           <LocalTime />
         </div>
 
         <h1
-          className="text-stone-800"
+          className="text-stone-900 dark:text-stone-100"
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(2.5rem, 12vw, 4rem)",
@@ -449,28 +461,33 @@ export const HeroSection = React.memo(function HeroSection() {
           Aanand
         </h1>
         <h1
-          className="text-stone-800 mb-5"
+          className="text-stone-900 dark:text-stone-100 mb-5"
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(2.5rem, 12vw, 4rem)",
             fontWeight: 800, lineHeight: 0.95, letterSpacing: "-0.04em", fontStyle: "italic",
           }}
         >
-          Modi<span className="text-[#C4622D]">.</span>
+          Modi<span className="text-[#C4622D] dark:text-[#5A9E82]">.</span>
         </h1>
 
         <div className="flex items-center gap-2 mb-4">
           <div className="w-[5px] h-[5px] rounded-full bg-emerald-500 animate-pulse" style={{willChange: "opacity"}} />
-          <span className="text-[9px] text-stone-400 tracking-wider uppercase" style={{ fontFamily: "var(--font-mono)" }}>Open to opportunities</span>
+          <span className="text-[9px] text-stone-600 dark:text-stone-400 tracking-wider uppercase" style={{ fontFamily: "var(--font-mono)" }}>Open to opportunities</span>
         </div>
 
-        <p className="text-stone-500 max-w-[400px] mb-10" style={{ fontFamily: "var(--font-body)", fontSize: "15px", lineHeight: 1.6 }}>
+        <p className="text-stone-700 dark:text-stone-300 max-w-[400px] mb-10" style={{ fontFamily: "var(--font-body)", fontSize: "15px", lineHeight: 1.6 }}>
           AI/ML engineer & full-stack builder. Published researcher, 2× national hackathon finalist. I build things that ship.
         </p>
 
         <div className="mb-8">
           <RetroTerminal />
         </div>
+
+        <div className="mb-8 flex justify-center">
+          <CassettePlayer />
+        </div>
+
 
         <div className="w-[160px] p-3 -rotate-2 mx-auto mb-8" style={{
           background: "linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%)",

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --color-base: #FAF8F5;
   --color-ink: #1C1917;
@@ -10,7 +12,76 @@
   --color-subtle: #A8A29E;
   --color-border: #E7E5E4;
   --color-surface: #F5F0E8;
+  --color-card: #fdfcfb;
+  --color-card-light: #ffffff;
+  --color-cell-empty: rgba(229, 224, 216, 0.4);
+  --color-sticky-langs: #FDF2BE;
+  --color-sticky-ai: #F3DDE1;
+  --color-sticky-frontend: #D1E8DF;
+  --color-sticky-backend: #E1E5F2;
+  --color-sticky-ops: #FDE6D4;
 }
+
+.dark {
+  --color-base: #0f0e0d;
+  --color-ink: #FAF8F5;
+  --color-accent: #5A9E82;
+  --color-accent-light: #84b9a4;
+  --color-muted: #A8A29E;
+  --color-subtle: #78716C;
+  --color-border: #2D2825;
+  --color-surface: #1C1917;
+  --color-card: #1C1A19;
+  --color-card-light: #242220;
+  --color-cell-empty: rgba(255, 255, 255, 0.05);
+  --color-sticky-langs: #2e2c1e;
+  --color-sticky-ai: #342124;
+  --color-sticky-frontend: #1e3029;
+  --color-sticky-backend: #212635;
+  --color-sticky-ops: #34251d;
+}
+
+.dark body {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px) !important;
+}
+
+.dark .about-notebook-grid {
+  background-image: linear-gradient(transparent 95%, rgba(90, 158, 130, 0.08) 100%), linear-gradient(90deg, transparent 95%, rgba(90, 158, 130, 0.08) 100%) !important;
+}
+
+.dark .paper-texture-overlay {
+  mix-blend-mode: screen !important;
+  opacity: 0.12 !important;
+}
+
+/* ── Dark Invert ── */
+.dark .dark-invert {
+  filter: invert(1) brightness(1.6) contrast(1.1);
+}
+
+/* ── Dark Index Card Overrides ── */
+.dark .war-card-paper {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.03) 0.7px, transparent 0.7px),
+    radial-gradient(circle at 80% 35%, rgba(255,255,255,0.02) 0.8px, transparent 0.8px),
+    radial-gradient(circle at 35% 80%, rgba(255,255,255,0.02) 0.6px, transparent 0.6px),
+    linear-gradient(165deg, rgba(30,28,27,0.85) 0%, rgba(24,22,21,0.95) 35%, rgba(20,18,17,0.98) 100%) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+.dark .war-card-torn-top {
+  background: radial-gradient(circle at 8px 12px, transparent 6px, rgba(255,255,255,0.04) 6px, rgba(255,255,255,0.04) 7px, transparent 7px) repeat-x !important;
+}
+.dark .war-card-torn-right {
+  background: radial-gradient(circle at 2px 8px, transparent 6px, rgba(255,255,255,0.04) 6px, rgba(255,255,255,0.04) 7px, transparent 7px) repeat-y !important;
+}
+.dark .war-card-crease {
+  opacity: 0.15 !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+}
+
+
 
 html {
   scroll-behavior: auto;
@@ -385,8 +456,8 @@ body::before {
   inset: 6px;
   border-radius: 16px;
   pointer-events: none;
-  border: 1px solid rgba(28,25,23,0.08);
-  background: rgba(253,252,251,0.55);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
 }
 
 .work-paper-stack-1 { transform: translate(8px, 10px) rotate(1.2deg); opacity: 0.75; }
@@ -403,8 +474,8 @@ body::before {
   display: block;
   width: 30px;
   height: 22px;
-  background: rgba(253,252,251,0.8);
-  border: 1px solid rgba(28,25,23,0.10);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
@@ -414,8 +485,8 @@ body::before {
 
 .work-story-strip {
   border-radius: 12px;
-  border: 1px dashed rgba(28,25,23,0.15);
-  background: rgba(245,240,232,0.5);
+  border: 1px dashed var(--color-border);
+  background: var(--color-surface);
   padding: 10px;
   display: grid;
   gap: 8px;
@@ -423,8 +494,8 @@ body::before {
 
 .work-story-step {
   border-radius: 10px;
-  border: 1px solid rgba(28,25,23,0.08);
-  background: rgba(253,252,251,0.74);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-light);
   padding: 8px 10px;
 }
 
@@ -434,14 +505,14 @@ body::before {
   font-size: 9px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(120,113,108,0.95);
+  color: var(--color-muted);
   margin-bottom: 4px;
 }
 
 .work-story-step p {
   font-family: var(--font-editorial);
   font-size: 12px;
-  color: rgba(68,64,60,0.95);
+  color: var(--color-ink);
   line-height: 1.35;
 }
 
@@ -464,9 +535,9 @@ body::before {
   text-transform: uppercase;
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(28,25,23,0.14);
-  background: rgba(253,252,251,0.78);
-  color: rgba(120,113,108,0.95);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-light);
+  color: var(--color-muted);
 }
 
 .work-filter-chip-active {
@@ -484,8 +555,8 @@ body::before {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  border: 1px solid rgba(28,25,23,0.14);
-  background: rgba(253,252,251,0.78);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-light);
   box-shadow: 0 16px 32px rgba(0,0,0,0.10);
   z-index: 220;
   font-size: 22px;
@@ -499,8 +570,8 @@ body::before {
   bottom: 74px;
   width: min(340px, calc(100vw - 36px));
   border-radius: 18px;
-  border: 1px solid rgba(28,25,23,0.12);
-  background: rgba(253,252,251,0.86);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
   box-shadow: 0 26px 60px rgba(0,0,0,0.14);
   z-index: 221;
   overflow: hidden;
@@ -513,7 +584,7 @@ body::before {
   justify-content: space-between;
   gap: 12px;
   padding: 14px 14px 10px;
-  border-bottom: 1px solid rgba(28,25,23,0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .sticker-sheet-kicker {
@@ -521,23 +592,23 @@ body::before {
   font-size: 10px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(28,25,23,0.7);
+  color: var(--color-ink);
 }
 
 .sticker-sheet-sub {
   margin-top: 6px;
   font-family: var(--font-body);
   font-size: 12px;
-  color: rgba(120,113,108,0.95);
+  color: var(--color-muted);
 }
 
 .sticker-sheet-close {
   width: 34px;
   height: 34px;
   border-radius: 12px;
-  border: 1px solid rgba(28,25,23,0.10);
-  background: rgba(245,240,232,0.6);
-  color: rgba(28,25,23,0.7);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
 }
 
 .sticker-grid {
@@ -549,8 +620,8 @@ body::before {
 
 .sticker-pick {
   border-radius: 14px;
-  border: 1px solid rgba(28,25,23,0.10);
-  background: rgba(245,240,232,0.35);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
   padding: 10px 8px;
   display: grid;
   place-items: center;
@@ -558,7 +629,7 @@ body::before {
 }
 
 .sticker-pick-active {
-  border-color: color-mix(in oklab, var(--color-accent) 45%, rgba(28,25,23,0.10));
+  border-color: var(--color-accent);
   box-shadow: 0 14px 30px rgba(196,98,45,0.18);
 }
 
@@ -576,18 +647,18 @@ body::before {
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(28,25,23,0.55);
+  color: var(--color-muted);
 }
 
 .sticker-sheet-footer {
   padding: 10px 14px 14px;
-  border-top: 1px solid rgba(28,25,23,0.06);
+  border-top: 1px solid var(--color-border);
 }
 
 .sticker-sheet-tip {
   font-family: var(--font-editorial);
   font-size: 12px;
-  color: rgba(120,113,108,0.95);
+  color: var(--color-muted);
 }
 
 .placed-sticker {
@@ -798,6 +869,10 @@ body::before {
   backdrop-filter: blur(6px);
   transform: rotate(-6deg);
   opacity: 0.9;
+}
+.dark .paper-separator-tape {
+  background: rgba(18, 16, 15, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 .paper-separator-tape-1 { left: 10%; }

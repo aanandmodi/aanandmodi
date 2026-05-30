@@ -80,20 +80,17 @@ export function NameBadge() {
           {/* Paper stack backer */}
           <div
             aria-hidden
-            className="absolute inset-0 rounded-2xl"
+            className="absolute inset-0 rounded-2xl border border-stone-200/50 dark:border-stone-800/40 shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
             style={{
               transform: "translate(8px, 10px) rotate(2.2deg)",
-              background: "linear-gradient(180deg, rgba(245,240,232,0.9), rgba(231,229,228,0.85))",
-              border: "1px solid rgba(0,0,0,0.05)",
-              boxShadow: "0 18px 40px rgba(0,0,0,0.10)",
+              background: "linear-gradient(180deg, var(--color-surface), var(--color-base))",
             }}
           />
           <div
             ref={innerRef}
-            className="rounded-2xl overflow-hidden relative transition-[transform] duration-500"
+            className="rounded-2xl overflow-hidden relative transition-[transform] duration-500 border border-stone-200/80 dark:border-stone-800"
             style={{
-              background: "linear-gradient(170deg, #fdfcfb 0%, #f5f0e8 100%)",
-              border: "1px solid rgba(0,0,0,0.08)",
+              background: "linear-gradient(170deg, var(--color-card-light) 0%, var(--color-card) 100%)",
               boxShadow: "0 10px 34px rgba(0,0,0,0.14), 0 1px 3px rgba(0,0,0,0.06)",
               transform: "rotateX(0deg) rotateY(0deg) translateZ(0)",
               transformStyle: "preserve-3d",
@@ -127,7 +124,7 @@ export function NameBadge() {
                 className="w-[76px] h-[76px] rounded-full overflow-hidden flex items-center justify-center relative"
                 style={{
                   background: "linear-gradient(135deg, #e7e5e4, #d6d3d1)",
-                  border: "3px solid #fff",
+                  border: "3px solid var(--color-card-light)",
                   boxShadow: "0 12px 28px rgba(0,0,0,0.10)",
                 }}
               >
@@ -169,23 +166,23 @@ export function NameBadge() {
 
             {/* Name */}
             <div className="text-center px-4 pb-2">
-              <h3 className="text-stone-800 font-bold text-[18px] tracking-[0.01em] leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+              <h3 className="text-stone-800 dark:text-stone-100 font-bold text-[18px] tracking-[0.01em] leading-tight" style={{ fontFamily: "var(--font-display)" }}>
                 Aanand Modi
               </h3>
-              <p className="text-[10px] text-stone-400 mt-1 tracking-[0.15em] uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+              <p className="text-[10px] text-stone-400 dark:text-stone-500 mt-1 tracking-[0.15em] uppercase" style={{ fontFamily: "var(--font-mono)" }}>
                 Builder · Researcher
               </p>
             </div>
 
             {/* Divider */}
-            <div className="mx-5 border-t border-stone-200/60" />
+            <div className="mx-5 border-t border-stone-200/60 dark:border-stone-800" />
 
             {/* Tags + micro signature */}
             <div className="flex flex-wrap justify-center gap-1.5 px-4 pt-3 pb-2">
               {["AI/ML", "Full Stack", "Published"].map((tag) => (
                 <span
                   key={tag}
-                  className="text-[7.5px] px-2.5 py-[3px] rounded-full bg-stone-100 text-stone-500 tracking-[0.1em] uppercase border border-stone-200/50"
+                  className="text-[7.5px] px-2.5 py-[3px] rounded-full bg-stone-100 dark:bg-stone-800 text-stone-500 dark:text-stone-400 tracking-[0.1em] uppercase border border-stone-200/50 dark:border-stone-700/50"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   {tag}
@@ -194,21 +191,21 @@ export function NameBadge() {
             </div>
 
             <div className="px-5 pb-3 flex items-center justify-between">
-              <span className="text-[20px] text-stone-700/80" style={{ fontFamily: "var(--font-handwritten)" }}>
+              <span className="text-[20px] text-stone-700/80 dark:text-stone-300/80" style={{ fontFamily: "var(--font-handwritten)" }}>
                 Aanand
               </span>
               {/* Tiny QR-ish mark */}
-              <svg width="34" height="34" viewBox="0 0 34 34" className="opacity-70">
-                <rect x="1" y="1" width="32" height="32" rx="6" fill="rgba(28,25,23,0.04)" stroke="rgba(28,25,23,0.10)" />
-                <path d="M8 8h6v6H8zM20 8h6v6h-6zM8 20h6v6H8z" fill="rgba(28,25,23,0.45)" />
-                <path d="M20 20h3v3h-3zM24 24h2v2h-2zM23 20h3v6h-2v-4h-1z" fill="rgba(28,25,23,0.35)" />
+              <svg width="34" height="34" viewBox="0 0 34 34" className="opacity-75">
+                <rect x="1" y="1" width="32" height="32" rx="6" className="fill-stone-900/5 dark:fill-white/5 stroke-stone-900/10 dark:stroke-white/10" />
+                <path d="M8 8h6v6H8zM20 8h6v6h-6zM8 20h6v6H8z" className="fill-stone-700 dark:fill-stone-300" />
+                <path d="M20 20h3v3h-3zM24 24h2v2h-2zM23 20h3v6h-2v-4h-1z" className="fill-stone-600 dark:fill-stone-400" />
               </svg>
             </div>
 
             {/* Bottom — location */}
-            <div className="bg-stone-50/60 px-4 py-2 flex items-center justify-center gap-1.5" style={{ borderTop: "1px solid rgba(0,0,0,0.04)" }}>
+            <div className="bg-stone-50/60 dark:bg-stone-900/60 px-4 py-2 flex items-center justify-center gap-1.5 border-t border-stone-100/40 dark:border-stone-800">
               <span className="text-[9px]">📍</span>
-              <span className="text-[8.5px] text-stone-400 tracking-wider uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+              <span className="text-[8.5px] text-stone-400 dark:text-stone-500 tracking-wider uppercase" style={{ fontFamily: "var(--font-mono)" }}>
                 Ahmedabad, India
               </span>
             </div>

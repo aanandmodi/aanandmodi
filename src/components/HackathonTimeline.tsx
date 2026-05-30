@@ -142,12 +142,12 @@ const HackathonCard = React.memo(function HackathonCard({ h, index }: { h: typeo
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-[12px] font-bold" style={{ color: h.color, fontFamily: "var(--font-mono)" }}>{h.place}</span>
-                <span className="text-[10px] text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>{h.date}</span>
+                <span className="text-[10px] text-stone-500 dark:text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>{h.date}</span>
               </div>
-              <h3 className="text-stone-800 text-xl font-bold leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+              <h3 className="text-stone-900 dark:text-stone-100 text-xl font-bold leading-tight" style={{ fontFamily: "var(--font-display)" }}>
                 {h.name}
               </h3>
-              <p className="text-[11px] text-stone-500 mt-1" style={{ fontFamily: "var(--font-mono)" }}>@ {h.org}</p>
+              <p className="text-[11px] text-stone-600 dark:text-stone-400 mt-1" style={{ fontFamily: "var(--font-mono)" }}>@ {h.org}</p>
             </div>
             
             <div className="text-right shrink-0">
@@ -160,20 +160,20 @@ const HackathonCard = React.memo(function HackathonCard({ h, index }: { h: typeo
           {/* Project/Team Tags */}
           <div className="flex flex-wrap gap-2 mb-4 relative z-10">
             {h.project && (
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-sm border border-stone-200 bg-white">
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-sm border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900">
                 <span className="w-2 h-2 rounded-full" style={{ backgroundColor: h.color }} />
-                <span className="text-[10px] text-stone-600 font-medium" style={{ fontFamily: "var(--font-mono)" }}>{h.project}</span>
+                <span className="text-[10px] text-stone-600 dark:text-stone-300 font-medium" style={{ fontFamily: "var(--font-mono)" }}>{h.project}</span>
               </div>
             )}
             {h.team && (
-              <span className="text-[10px] px-2.5 py-1 bg-stone-100 text-stone-500 rounded-sm font-medium" style={{ fontFamily: "var(--font-mono)" }}>
+              <span className="text-[10px] px-2.5 py-1 bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 rounded-sm font-medium" style={{ fontFamily: "var(--font-mono)" }}>
                 {h.team} {h.duration && `· ${h.duration}`}
               </span>
             )}
           </div>
 
           {/* Story */}
-          <p className="text-[13px] text-stone-700 leading-relaxed italic mb-5 relative z-10" style={{ fontFamily: "var(--font-editorial)" }}>
+          <p className="text-[13px] text-stone-700 dark:text-stone-200 leading-relaxed italic mb-5 relative z-10" style={{ fontFamily: "var(--font-editorial)" }}>
             <span aria-hidden className="select-none">
               &ldquo;
             </span>
@@ -185,9 +185,9 @@ const HackathonCard = React.memo(function HackathonCard({ h, index }: { h: typeo
 
           {/* Tech stack footer */}
           {h.tech && h.tech.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 pt-4 border-t border-stone-100 relative z-10">
+            <div className="flex flex-wrap gap-1.5 pt-4 border-t border-stone-200 dark:border-stone-800 relative z-10">
               {h.tech.map(t => (
-                <span key={t} className="text-[9px] px-2 py-0.5 text-stone-400 uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
+                <span key={t} className="text-[9px] px-2 py-0.5 text-stone-500 dark:text-stone-400 uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
                   {t}
                 </span>
               ))}
@@ -274,10 +274,10 @@ export const HackathonTimeline = React.memo(function HackathonTimeline() {
       <div className="mx-auto max-w-[1000px] relative">
         {/* Section label */}
         <div className="flex items-center gap-4 mb-16 scroll-fade-in relative z-20">
-          <span className="text-[11px] tracking-[0.3em] uppercase text-stone-600 font-bold" style={{ fontFamily: "var(--font-mono)" }}>
+          <span className="text-[11px] tracking-[0.3em] uppercase text-stone-600 dark:text-stone-400 font-bold" style={{ fontFamily: "var(--font-mono)" }}>
             04 — War Stories
           </span>
-          <div className="flex-1 h-[2px] bg-stone-300" />
+          <div className="flex-1 h-[2px] bg-stone-300 dark:bg-stone-800" />
           <span className="text-[20px] animate-pulse drop-shadow-md">⚔️</span>
         </div>
 
@@ -299,11 +299,11 @@ export const HackathonTimeline = React.memo(function HackathonTimeline() {
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-10 h-10 border-2 border-red-500 rounded-full flex items-center justify-center opacity-70 z-20 shadow-md">
             <div className="w-3 h-3 bg-red-500 rounded-full shadow-inner" />
           </div>
-          <div className="bg-[#FEFBED] p-6 shadow-[0_15px_30px_rgba(0,0,0,0.12)] border border-[#F0EAC1] relative z-10" style={{ borderBottomRightRadius: "20px 5px" }}>
-            <p className="text-[14px] text-stone-800 leading-relaxed font-medium" style={{ fontFamily: "var(--font-editorial)" }}>
+          <div className="bg-[#FEFBED] dark:bg-[#2b2a1a] p-6 shadow-[0_15px_30px_rgba(0,0,0,0.12)] border border-[#F0EAC1] dark:border-[#4d4a2b] relative z-10" style={{ borderBottomRightRadius: "20px 5px" }}>
+            <p className="text-[14px] text-stone-800 dark:text-stone-200 leading-relaxed font-medium" style={{ fontFamily: "var(--font-editorial)" }}>
               5 hackathons. 2 national podiums.<br/>Always Team Apex. Always shipping.
             </p>
-            <p className="text-[9px] text-stone-500 mt-4 uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
+            <p className="text-[9px] text-stone-500 dark:text-stone-450 mt-4 uppercase tracking-widest font-bold" style={{ fontFamily: "var(--font-mono)" }}>
               Pull Shark & YOLO GitHub Badges
             </p>
           </div>

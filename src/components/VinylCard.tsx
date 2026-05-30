@@ -31,7 +31,7 @@ export function VinylCard() {
           }}
         />
         {/* Card body */}
-        <div className="relative bg-white border border-stone-200 rounded-2xl shadow-sm flex flex-col items-center w-[240px] pt-6 pb-6">
+        <div className="relative bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl shadow-sm flex flex-col items-center w-[240px] pt-6 pb-6">
           {/* Hover blobs */}
           <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none opacity-0 transition-opacity duration-500 ease-out group-hover/vinyl:opacity-100">
             <div className="vinyl-blob vinyl-blob-1" />
@@ -42,10 +42,10 @@ export function VinylCard() {
           <div className="relative z-[1] w-36 h-36" />
           {/* Info */}
           <div className="relative z-[1] mt-4 text-center">
-            <p className="text-[10px] text-stone-500 uppercase tracking-widest mb-1" style={{ fontFamily: "var(--font-mono)" }}>Side Projects</p>
-            <h3 className="text-stone-800 font-bold text-lg leading-tight mb-1" style={{ fontFamily: "var(--font-display)" }}>Build Log</h3>
-            <p className="text-[11px] text-stone-500 mb-1">15+ projects shipped</p>
-            <p className="text-stone-400 text-[13px] font-medium leading-snug">Always building</p>
+            <p className="text-[10px] text-stone-500 dark:text-stone-400 uppercase tracking-widest mb-1" style={{ fontFamily: "var(--font-mono)" }}>Side Projects</p>
+            <h3 className="text-stone-800 dark:text-stone-100 font-bold text-lg leading-tight mb-1" style={{ fontFamily: "var(--font-display)" }}>Build Log</h3>
+            <p className="text-[11px] text-stone-500 dark:text-stone-300 mb-1">15+ projects shipped</p>
+            <p className="text-stone-600 dark:text-stone-400 text-[13px] font-medium leading-snug">Always building</p>
           </div>
         </div>
       </div>

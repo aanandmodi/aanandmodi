@@ -15,6 +15,9 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { MagneticInteractions } from "@/components/MagneticInteractions";
 import { PaperSeparator } from "@/components/PaperSeparator";
 import { StickerSheet } from "@/components/StickerSheet";
+import { DeskLamp } from "@/components/DeskLamp";
+
+
 
 type Burst = { id: number; x: number; y: number };
 
@@ -62,6 +65,8 @@ export default function Home() {
           <MagneticInteractions />
           <StickerSheet />
           <ClickBurstOverlay />
+          <DeskLamp />
+
 
           <NavHeader />
           <HeroSection />
@@ -74,6 +79,7 @@ export default function Home() {
           <PaperSeparator flip tone="#6A9EC0" />
           <HackathonTimeline />
           <ContactFooter />
+
         </div>
       </SmoothScroll>
     </>

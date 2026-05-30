@@ -89,8 +89,8 @@ const ResearchCard = React.memo(function ResearchCard({ paper }: { paper: typeof
           style={{
             transform: "rotateX(0deg) rotateY(0deg)",
             transformStyle: "preserve-3d",
-            background: "#fdfcfb",
-            border: `1px solid #e7e5e4`,
+            background: "var(--color-card)",
+            border: `1px solid var(--color-border)`,
             boxShadow: "0 20px 40px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02)",
             willChange: "transform",
           }}
@@ -112,19 +112,19 @@ const ResearchCard = React.memo(function ResearchCard({ paper }: { paper: typeof
             {/* Header info */}
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-3">
-                <span className="text-[10px] px-2.5 py-1 bg-stone-100 text-stone-600 rounded-md font-medium uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-[10px] px-2.5 py-1 bg-stone-100 dark:bg-stone-850 text-stone-600 dark:text-stone-300 rounded-md font-medium uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
                   {paper.journal}
                 </span>
-                <span className="text-[10px] text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-[10px] text-stone-500 dark:text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>
                   {paper.year}
                 </span>
-                <span className="text-[10px] text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-[10px] text-stone-500 dark:text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>
                   • {paper.issn}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-stone-800" style={{
+              <h3 className="text-stone-900 dark:text-stone-100" style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
                 fontWeight: 600,
@@ -135,35 +135,35 @@ const ResearchCard = React.memo(function ResearchCard({ paper }: { paper: typeof
             </div>
 
             {/* Authors & Info box */}
-            <div className="p-4 rounded-lg border border-stone-100 bg-stone-50/50 flex flex-col gap-2 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+            <div className="p-4 rounded-lg border border-stone-200/60 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/50 flex flex-col gap-2 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
               
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                <span className="text-[10px] text-stone-400 uppercase tracking-widest w-16" style={{ fontFamily: "var(--font-mono)" }}>Authors</span>
-                <span className="text-[13px] text-stone-700 font-medium" style={{ fontFamily: "var(--font-body)" }}>{paper.coAuthors}</span>
+                <span className="text-[10px] text-stone-500 dark:text-stone-400 uppercase tracking-widest w-16" style={{ fontFamily: "var(--font-mono)" }}>Authors</span>
+                <span className="text-[13px] text-stone-700 dark:text-stone-200 font-medium" style={{ fontFamily: "var(--font-body)" }}>{paper.coAuthors}</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                <span className="text-[10px] text-stone-400 uppercase tracking-widest w-16" style={{ fontFamily: "var(--font-mono)" }}>Advisor</span>
-                <span className="text-[13px] text-stone-500 italic" style={{ fontFamily: "var(--font-editorial)" }}>{paper.advisor}</span>
+                <span className="text-[10px] text-stone-500 dark:text-stone-400 uppercase tracking-widest w-16" style={{ fontFamily: "var(--font-mono)" }}>Advisor</span>
+                <span className="text-[13px] text-stone-600 dark:text-stone-300 italic" style={{ fontFamily: "var(--font-editorial)" }}>{paper.advisor}</span>
               </div>
             </div>
 
             {/* Abstract */}
             <div>
-              <p className="text-[10px] text-stone-400 uppercase tracking-widest mb-3 flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>
-                <span className="w-4 h-[1px] bg-stone-300" /> Abstract
+              <p className="text-[10px] text-stone-500 dark:text-stone-400 uppercase tracking-widest mb-3 flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="w-4 h-[1px] bg-stone-300 dark:bg-stone-700" /> Abstract
               </p>
-              <p className="text-[14px] text-stone-600 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+              <p className="text-[14px] text-stone-700 dark:text-stone-300 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
                 {paper.abstract}
               </p>
             </div>
 
             {/* Footer (Tags & Action) */}
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-6 mt-2 border-t border-stone-100">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-6 mt-2 border-t border-stone-200 dark:border-stone-800/80">
               {/* Tags */}
               <div className="flex flex-wrap gap-1.5">
                 {paper.tags.map((tag) => (
-                  <span key={tag} className="text-[9px] px-2 py-1 bg-stone-50 border border-stone-200 text-stone-500 rounded-md transition-colors hover:bg-[#9680C2] hover:text-white hover:border-[#9680C2]" style={{ fontFamily: "var(--font-mono)", willChange: "background-color, color, border-color" }}>
+                  <span key={tag} className="text-[9px] px-2 py-1 bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-300 rounded-md transition-colors hover:bg-[#9680C2] dark:hover:bg-[#9680C2] hover:text-white dark:hover:text-white hover:border-[#9680C2] dark:hover:border-[#9680C2]" style={{ fontFamily: "var(--font-mono)", willChange: "background-color, color, border-color" }}>
                     {tag}
                   </span>
                 ))}
@@ -173,11 +173,11 @@ const ResearchCard = React.memo(function ResearchCard({ paper }: { paper: typeof
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => copyDoi(paper.doi)}
-                  className="group relative px-3 py-1.5 rounded-md overflow-hidden bg-stone-100 border border-stone-200 transition-all active:scale-95"
+                  className="group relative px-3 py-1.5 rounded-md overflow-hidden bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 transition-all active:scale-95 cursor-pointer"
                   style={{ willChange: "transform" }}
                 >
-                  <div className="absolute inset-0 bg-stone-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300" style={{ willChange: "transform" }} />
-                  <span className="relative z-10 text-[10px] text-stone-600 font-medium flex items-center gap-1.5" style={{ fontFamily: "var(--font-mono)" }}>
+                  <div className="absolute inset-0 bg-stone-200 dark:bg-stone-700 translate-y-full group-hover:translate-y-0 transition-transform duration-300" style={{ willChange: "transform" }} />
+                  <span className="relative z-10 text-[10px] text-stone-600 dark:text-stone-300 font-medium flex items-center gap-1.5" style={{ fontFamily: "var(--font-mono)" }}>
                     {copiedDoi ? (
                       <>
                         <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>
@@ -215,7 +215,7 @@ const ResearchCard = React.memo(function ResearchCard({ paper }: { paper: typeof
       {/* Cute note below paper */}
       <div className="flex items-center gap-2 mt-4 ml-4">
         <span className="text-[18px] animate-bounce" style={{ animationDuration: "2s", willChange: "transform" }}>⚡</span>
-        <span className="text-[11px] text-stone-500 italic" style={{ fontFamily: "var(--font-editorial)" }}>
+        <span className="text-[11px] text-stone-600 dark:text-stone-400 italic" style={{ fontFamily: "var(--font-editorial)" }}>
           Accepted in 7 days — published at {paper.conference}
         </span>
       </div>
@@ -251,16 +251,16 @@ export const ResearchSection = React.memo(function ResearchSection() {
       <div className="mx-auto max-w-[1000px] relative">
         {/* Section label */}
         <div className="flex items-center gap-4 mb-8 scroll-fade-in">
-          <span className="text-[11px] tracking-[0.3em] uppercase text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>
+          <span className="text-[11px] tracking-[0.3em] uppercase text-stone-600 dark:text-stone-400 font-bold" style={{ fontFamily: "var(--font-mono)" }}>
             03 — Research
           </span>
-          <div className="flex-1 h-[1px] bg-stone-200" />
+          <div className="flex-1 h-[1px] bg-stone-300 dark:bg-stone-800" />
         </div>
 
         {/* Editorial intro */}
         <div className="mb-12 scroll-fade-in relative">
           <h2
-            className="text-stone-800 max-w-[600px] relative z-10"
+            className="text-stone-900 dark:text-stone-100 max-w-[600px] relative z-10"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(1.5rem, 3vw, 2.2rem)",

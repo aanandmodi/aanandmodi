@@ -78,8 +78,8 @@ const ProjectCard = React.memo(function ProjectCard({
         ref={innerRef}
         className="rounded-2xl overflow-hidden relative h-full transition-[box-shadow,background-color,border-color,filter] duration-400 ease-out paper-tilt-glare work-focus-card"
         style={{
-          background: isActive ? `linear-gradient(145deg, ${project.color}08, #fdfcfb)` : "rgba(255,255,255,0.78)",
-          border: `1px solid ${isActive ? `${project.color}30` : "#e7e5e4"}`,
+          background: isActive ? `linear-gradient(145deg, ${project.color}12, var(--color-card))` : "var(--color-card-light)",
+          border: `1px solid ${isActive ? `${project.color}30` : "var(--color-border)"}`,
           boxShadow: isActive ? `0 18px 56px ${project.color}16, 0 4px 16px rgba(0,0,0,0.05)` : "0 4px 14px rgba(0,0,0,0.04)",
           transform: "rotateX(0deg) rotateY(0deg)",
           transformStyle: "preserve-3d",
@@ -105,11 +105,11 @@ const ProjectCard = React.memo(function ProjectCard({
                 {project.icon}
               </div>
               <div>
-                <h3 className="text-stone-800 font-bold text-[16px] leading-tight" style={{ fontFamily: "var(--font-display)" }}>{project.name}</h3>
-                <p className="text-[10px] text-stone-400 mt-0.5" style={{ fontFamily: "var(--font-mono)" }}>{project.subtitle} · {project.year}</p>
+                <h3 className="text-stone-900 dark:text-stone-100 font-bold text-[16px] leading-tight" style={{ fontFamily: "var(--font-display)" }}>{project.name}</h3>
+                <p className="text-[10px] text-stone-500 dark:text-stone-400 mt-0.5" style={{ fontFamily: "var(--font-mono)" }}>{project.subtitle} · {project.year}</p>
               </div>
             </div>
-            <span className="text-[42px] font-bold leading-none select-none transition-colors duration-300" style={{ fontFamily: "var(--font-display)", color: isActive ? `${project.color}24` : "#f0efec" }}>
+            <span className="text-[42px] font-bold leading-none select-none transition-colors duration-300" style={{ fontFamily: "var(--font-display)", color: isActive ? `${project.color}24` : "var(--color-border)" }}>
               {String(index + 1).padStart(2, "0")}
             </span>
           </div>
@@ -118,9 +118,9 @@ const ProjectCard = React.memo(function ProjectCard({
             <div>
               <div className="rounded-lg p-3 mb-4 relative" style={{ background: `${project.color}06`, borderLeft: `3px solid ${project.color}40` }}>
                 <span className="text-[8px] uppercase tracking-[0.2em] font-bold block mb-1" style={{ color: project.color, fontFamily: "var(--font-mono)" }}>💭 The Thought</span>
-                <p className="text-[12px] text-stone-600 leading-relaxed italic" style={{ fontFamily: "var(--font-editorial)" }}>&ldquo;{project.thought}&rdquo;</p>
+                <p className="text-[12px] text-stone-600 dark:text-stone-300 leading-relaxed italic" style={{ fontFamily: "var(--font-editorial)" }}>&ldquo;{project.thought}&rdquo;</p>
               </div>
-              <p className="text-[12px] text-stone-600 leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>{project.description}</p>
+              <p className="text-[12px] text-stone-700 dark:text-stone-300 leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>{project.description}</p>
             </div>
 
             {isActive && (
@@ -143,19 +143,19 @@ const ProjectCard = React.memo(function ProjectCard({
           )}
 
           {project.achievement && (
-            <div className="flex items-center gap-2 p-2 rounded-lg bg-amber-50/50 border border-amber-100/40 mb-3 work-stamp">
-              <span className="text-[10px] text-amber-800 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{project.achievement}</span>
+            <div className="flex items-center gap-2 p-2 rounded-lg bg-amber-50/50 dark:bg-amber-950/20 border border-amber-100/40 dark:border-amber-900/40 mb-3 work-stamp">
+              <span className="text-[10px] text-amber-800 dark:text-amber-300 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{project.achievement}</span>
             </div>
           )}
 
-          <div className="flex items-center justify-between pt-3 border-t border-stone-100">
+          <div className="flex items-center justify-between pt-3 border-t border-stone-250 dark:border-stone-800/80">
             <div className="flex flex-wrap gap-1">
               {project.tech.slice(0, isActive ? undefined : 3).map((t) => (
-                <span key={t} className="text-[8px] px-1.5 py-0.5 rounded bg-stone-100 text-stone-400" style={{ fontFamily: "var(--font-mono)" }}>{t}</span>
+                <span key={t} className="text-[8px] px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300" style={{ fontFamily: "var(--font-mono)" }}>{t}</span>
               ))}
             </div>
             {project.link && project.link !== "#" && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#C4622D] hover:text-stone-800 transition-colors font-medium magnetic" style={{ fontFamily: "var(--font-mono)" }} data-cursor="link" data-cursor-label="open" onClick={(e) => e.stopPropagation()}>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[10px] text-[#C4622D] dark:text-[#5A9E82] hover:text-stone-900 dark:hover:text-stone-100 transition-colors font-medium magnetic" style={{ fontFamily: "var(--font-mono)" }} data-cursor="link" data-cursor-label="open" onClick={(e) => e.stopPropagation()}>
                 View →
               </a>
             )}
@@ -179,23 +179,23 @@ export const WorkSection = React.memo(function WorkSection() {
 
       <div className="mx-auto max-w-[1200px] relative z-10">
         <div className="flex items-center gap-4 mb-6 scroll-fade-in">
-          <span className="text-[11px] tracking-[0.3em] uppercase text-stone-500 font-bold" style={{ fontFamily: "var(--font-mono)" }}>02 — Work</span>
-          <div className="flex-1 h-[2px] bg-stone-300" />
+          <span className="text-[11px] tracking-[0.3em] uppercase text-stone-600 dark:text-stone-400 font-bold" style={{ fontFamily: "var(--font-mono)" }}>02 — Work</span>
+          <div className="flex-1 h-[2px] bg-stone-300 dark:bg-stone-800" />
         </div>
 
         <div className="mb-12 scroll-fade-in relative">
-          <h2 className="text-stone-800 max-w-[640px] relative z-10" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 700, lineHeight: 1.2, letterSpacing: "-0.02em" }}>
+          <h2 className="text-stone-900 dark:text-stone-100 max-w-[640px] relative z-10" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 700, lineHeight: 1.2, letterSpacing: "-0.02em" }}>
             Every project starts with a <InkHighlight color="#C4622D"><span style={{ fontStyle: "italic" }}>question</span></InkHighlight>.
           </h2>
-          <p className="text-stone-500 mt-4 text-[13px] bg-stone-100 border border-stone-200 inline-block px-3 py-1.5 shadow-sm -rotate-1" style={{ fontFamily: "var(--font-mono)" }}>
+          <p className="text-stone-600 dark:text-stone-300 mt-4 text-[13px] bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 inline-block px-3 py-1.5 shadow-sm -rotate-1" style={{ fontFamily: "var(--font-mono)" }}>
             click any card to expand · {projects.length} projects shown
           </p>
         </div>
 
-        <div className="hidden lg:block absolute top-[46px] right-[44px] w-[190px] p-4 bg-[#F3DDE1] shadow-lg rotate-6 transition-transform hover:rotate-0 hover:scale-105 z-20" style={{ borderBottomRightRadius: "20px 5px", willChange: "transform" }}>
+        <div className="hidden lg:block absolute top-[46px] right-[44px] w-[190px] p-4 bg-[#F3DDE1] dark:bg-[#322023] border border-[#e8c0c8]/60 dark:border-[#4d2b30]/50 shadow-lg rotate-6 transition-transform hover:rotate-0 hover:scale-105 z-20" style={{ borderBottomRightRadius: "20px 5px", willChange: "transform" }}>
           <div className="w-8 h-3 bg-black/10 absolute -top-1.5 left-1/2 -translate-x-1/2 -rotate-2" />
-          <p className="text-[12px] font-bold text-stone-800 uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-mono)" }}>Case Study Mode</p>
-          <p className="text-[13px] text-stone-700 leading-snug" style={{ fontFamily: "var(--font-editorial)" }}>Tap a card to open full narrative: thought, build, outcome.</p>
+          <p className="text-[12px] font-bold text-stone-900 dark:text-stone-100 uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-mono)" }}>Case Study Mode</p>
+          <p className="text-[13px] text-stone-700 dark:text-stone-200 leading-snug" style={{ fontFamily: "var(--font-editorial)" }}>Tap a card to open full narrative: thought, build, outcome.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 relative work-bento-grid">
