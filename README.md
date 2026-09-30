@@ -271,14 +271,7 @@ Computer Engineering student specializing in **AI/ML**, with hands-on experience
 
 [![Repos language split](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aanandmodi&theme=tokyonight)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
 
-<details>
-<summary><strong>🐍 Contribution snake (daily refresh)</strong></summary>
 
-Rendered from your public contributions via [`Platane/snk`](https://github.com/Platane/snk). First run **`Actions → Contribution snake`** if the image is blank.
-
-<p align="center">
-  <img alt="GitHub contributions snake animation" src="./assets/github-contribution-grid-snake-dark.svg" width="92%"/>
-</p>
 
 
 
